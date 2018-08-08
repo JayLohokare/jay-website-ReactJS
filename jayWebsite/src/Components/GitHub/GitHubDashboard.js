@@ -17,8 +17,7 @@
 
 
 	const footerStyle = {
-		paddingLeft : '300px',
-		display: 'flex',
+		 display: 'flex',
 		minHeight: '50vh',
 		flexDirection: 'column',
 		flex:  'auto'
@@ -34,6 +33,16 @@
 		paddingTop: '00px',
 		marginTop: '720px'
 
+	}
+
+	const style400 = {
+		height:'200px'
+	}
+
+	const gitImageStyle = {
+		maxWidth: '100%',
+		maxHeight: '100%',
+		float: 'center'
 	}
 
 	class GitHubDashboard extends Component {
@@ -52,6 +61,15 @@
 			commits = commits.concat(this.state.data2);
 			commits = commits.concat(this.state.data3);
 			commits = commits.concat(this.state.data4);
+
+
+			var i = 0;
+			for (var commit in commits){
+				i += 1;
+			}
+
+
+			this.state.commitsCount = i;
 
 			console.log("Data 1 " + commits.length);
 			console.log("Data 2 " + this.state.data2.length);
@@ -108,7 +126,9 @@
 
 				repos1: [],
 				repos2: [],
-				repos3: []
+				repos3: [],
+
+				commitsCount: 0
 			};
 		}
 
@@ -204,10 +224,10 @@
 
 
 		render() {
-			const { isLoading, error, repos } = this.state;
+			const { isLoading, error} = this.state;
 
 			if (error) {
-				return <p>{error.message}</p>;
+				console.log("API error. GIT API - Try again later. Projects API - Contact jaylohokare@gmail.com to report ")
 			}
 
 			if (isLoading) {
@@ -220,49 +240,43 @@
 
 				<div class="hide-on-med-and-down" style={footerAddPadStyle}>
 				<footer class="red page-footer" style={footerStyle}>
-				<div class="container">
-				<div class="row">
+				<div class="     light-blue-text text-darken-3">
 
-				<div class="row" >
 
-				<div class = "col hide-on-med-and-down l12 " >
-				<div class="card white blue-grey text-darken-3" >
-				<div class="white valign-wrapper card-content light-blue-text text-darken-3">
-				<div  >
-				<CalendarHeatmap
-				horizontal={true}
-				startDate={this.state.yearBefore}
-				endDate={this.state.today}
-				values={this.getGitCommits()}
-				classForValue={(value) => {
-					if (!value) {
-						return 'color-empty';
-					}
-					if (value.count>=4){
-						return 'color-scale-4'
-					}
-					return `color-scale-${value.count}`;
-				}}
-				/>
-				</div>
-				</div>
-				</div>
-				</div>
+					<div class="row ">
 
-				<div class = "col hide-on-med-and-down l12 " >
-				<div class="card white blue-grey text-darken-3" >
-				<div class="white   valign-wrapper card-content light-blue-text text-darken-3">
-				<div>
-				<div  >
-				{this.getReposCount()}
-				</div>
-				</div>
-				</div>
-				</div>
-				</div>
+						<div class="col offset-l1 l3  ">
+							<CalendarHeatmap
+							style={style400}
+							horizontal={true}
+							startDate={this.state.yearBefore}
+							endDate={this.state.today}
+							values={this.getGitCommits()}
+							classForValue={(value) => {
+								if (!value) {
+									return 'color-empty';
+								}
+								if (value.count>=4){
+									return 'color-scale-4'
+								}
+								return `color-scale-${value.count}`;
+							}}
+							/>
+						</div>
 
-				</div>
-				</div>
+						<div class="col offset-l1 l3  ">
+							<img alt="Github" class="center center-align" src="images/Git.png" style={gitImageStyle}/>
+							<p class="white-text center">
+							Repositories - {this.getReposCount()} 
+							</p>
+							<p class="white-text center">
+							Commits in past 90 days - {this.state.commitsCount}
+							</p>
+						</div>
+
+
+					</div>
+
 				</div>
 				</footer>
 				</div>
@@ -270,50 +284,47 @@
 
 				<div class="hide-on-large-only" style={footerSmallAddPadStyle}>
 				<footer class="red page-footer" style={footerStyle}>
-				<div class="container">
-				<div class="row">
 
-				<div class="row" >
 
-				<div class = "col hide-on-med-and-down offset-l4 l4 " >
-				<div class="card white blue-grey text-darken-3" >
-				<div class="white valign-wrapper card-content light-blue-text text-darken-3">
-				<div  >
-				<CalendarHeatmap
-				horizontal={true}
-				startDate={this.state.yearBefore}
-				endDate={this.state.today}
-				values={this.getGitCommits()}
-				classForValue={(value) => {
-					if (!value) {
-						return 'color-empty';
-					}
-					if (value.count>=4){
-						return 'color-scale-4'
-					}
-					return `color-scale-${value.count}`;
-				}}
-				/>
-				</div>
-				</div>
-				</div>
-				</div>
+					<div class = "hide-on-large-only" >
+					<div class="card white blue-grey text-darken-3" >
+					<div class="white valign-wrapper card-content light-blue-text text-darken-3">
+					<div  >
+					<CalendarHeatmap
+					horizontal={true}
+					startDate={this.state.yearBefore}
+					endDate={this.state.today}
+					values={this.getGitCommits()}
+					classForValue={(value) => {
+						if (!value) {
+							return 'color-empty';
+						}
+						if (value.count>=4){
+							return 'color-scale-4'
+						}
+						return `color-scale-${value.count}`;
+					}}
+					/>
+					</div>
+					</div>
+					</div>
+					</div>
 
-				<div class = "col hide-on-med-and-down offset-l4 l4 " >
-				<div class="card white blue-grey text-darken-3" >
-				<div class="white center valign-wrapper card-content light-blue-text text-darken-3">
-				<div>
-				<div class="center center-align">
-				{this.getReposCount()}
-				</div>
-				</div>
-				</div>
-				</div>
-				</div>
 
-				</div>
-				</div>
-				</div>
+					<div class = " hide-on-large-only" >
+					<div class="card white blue-grey text-darken-3" >
+					<div class="white center valign-wrapper card-content light-blue-text text-darken-3">
+					<div>
+					<div class="center center-align">
+					{this.getReposCount()}
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
+
+
+
 				</footer>
 				</div>
 

@@ -40,7 +40,7 @@ class ProjectRESTAPI extends Component {
   render() {
     const { data, isLoading, error } = this.state;
 
-    {this.log()}
+    
     if (error) {
       return <p>{error.message}</p>;
     }
