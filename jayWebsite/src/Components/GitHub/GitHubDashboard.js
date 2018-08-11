@@ -2,6 +2,7 @@
 	import axios from 'axios';
 	import Loader from '../Loader'
 	import CalendarHeatmap from 'react-calendar-heatmap';
+	import M from 'materialize-css';
 
 
 	const EventsAPI1 = 'https://api.github.com/users/jayLohokare/events?page=1'
@@ -17,10 +18,25 @@
 
 
 	const footerStyle = {
-		 display: 'flex',
-		minHeight: '50vh',
+		display: 'flex',
+		minHeight: '20%',
+		maxHeight: '30%',
 		flexDirection: 'column',
-		flex:  'auto'
+		flex:  'auto',
+		padding: '50px',
+		outlineStyle: 'solid'
+	}
+
+
+	const footerSmallStyle = {
+		display: 'flex',
+		minHeight: '20%',
+		maxHeight: '100%',
+		flexDirection: 'column',
+		flex:  'auto',
+		padding: '50px',
+
+		outlineStyle: 'solid'
 	}
 
 	const footerAddPadStyle = {
@@ -31,21 +47,41 @@
 
 	const footerSmallAddPadStyle = {
 		paddingTop: '00px',
-		marginTop: '720px'
-
+		marginTop: '720px',
+		
 	}
 
 	const style400 = {
-		height:'200px'
+		height:'300px',
+		
+
+	}
+
+
+	const styleSmall400 = {
+		height:'30%',
+		paddingTop: '50px',
+		
+
 	}
 
 	const gitImageStyle = {
-		maxWidth: '100%',
+		padding: '15px',
+		maxWidth: '60%',
 		maxHeight: '100%',
-		float: 'center'
+		float: 'center',
+		centerAlign: 'true'
+	}
+
+	const paddingRight = {
+		paddingRight: '100px',
 	}
 
 	class GitHubDashboard extends Component {
+
+		showGitError(){
+			M.toast('Try again after some time to get correct Github statistics', 4000);
+		}
 		
 		getReposCount(){
 			var repo1 = this.state.repos1;
@@ -70,6 +106,7 @@
 
 
 			this.state.commitsCount = i;
+			this.state.allCommitsReceived = true;
 
 			console.log("Data 1 " + commits.length);
 			console.log("Data 2 " + this.state.data2.length);
@@ -117,7 +154,7 @@
 				yearBefore: yearBeforeStr,
 
 				isLoading: false,
-				error: null,
+				errorGit: null,
 
 				data1: [],
 				data2: [],
@@ -128,7 +165,8 @@
 				repos2: [],
 				repos3: [],
 
-				commitsCount: 0
+				commitsCount: 0,
+				allCommitsReceived: false
 			};
 		}
 
@@ -146,7 +184,7 @@
 				isLoading: false
 			}))
 			.catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 			
@@ -157,7 +195,7 @@
 				isLoading: false
 			}))
 			.catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 			 
@@ -168,7 +206,7 @@
 				isLoading: false
 			}))
 			.catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 			 
@@ -179,7 +217,7 @@
 				isLoading: false
 			}))
 			.catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 			 
@@ -193,7 +231,7 @@
 		    	isLoading: false
 		    }))
 		    .catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 
@@ -204,7 +242,7 @@
 		    	isLoading: false
 		    }))
 		    .catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 
@@ -215,7 +253,7 @@
 		    	isLoading: false
 		    }))
 		    .catch(error => this.setState({
-		    	error,
+		    	errorGit : error,
 		    	isLoading: false
 		    }));
 
@@ -224,11 +262,13 @@
 
 
 		render() {
-			const { isLoading, error} = this.state;
+			const { isLoading, errorGit} = this.state;
 
-			if (error) {
-				console.log("API error. GIT API - Try again later. Projects API - Contact jaylohokare@gmail.com to report ")
+			if (errorGit) {
+				console.log("GitHub API error.");
+				this.showGitError();
 			}
+
 
 			if (isLoading) {
 				return <Loader />;
@@ -245,7 +285,7 @@
 
 					<div class="row ">
 
-						<div class="col offset-l1 l3  ">
+						<div style={paddingRight} class="  col offset-l1 l3  ">
 							<CalendarHeatmap
 							style={style400}
 							horizontal={true}
@@ -264,13 +304,27 @@
 							/>
 						</div>
 
-						<div class="col offset-l1 l3  ">
-							<img alt="Github" class="center center-align" src="images/Git.png" style={gitImageStyle}/>
+						<div class="col l4   ">
+							<div class="center center-align">
+								<img href="http://www.github.com/JayLohokare" alt="Github" class="" src="images/Git.png" style={gitImageStyle}/>
+							</div>
 							<p class="white-text center">
-							Repositories - {this.getReposCount()} 
+							{this.getReposCount()} Repositories 
 							</p>
 							<p class="white-text center">
-							Commits in past 90 days - {this.state.commitsCount}
+							{this.state.commitsCount} Commits in past 90 days
+							</p>
+						</div>
+
+						<div class="col l4   ">
+							<div class="center center-align">
+								<img href="http://www.github.com/JayLohokare" alt="Github" class="" src="images/Git.png" style={gitImageStyle}/>
+							</div>
+							<p class="white-text center">
+							{this.getReposCount()} Repositories 
+							</p>
+							<p class="white-text center">
+							{this.state.commitsCount} Commits in past 90 days
 							</p>
 						</div>
 
@@ -283,46 +337,55 @@
 
 
 				<div class="hide-on-large-only" style={footerSmallAddPadStyle}>
-				<footer class="red page-footer" style={footerStyle}>
+				<footer class="red page-footer" style={footerSmallStyle}>
+
+				<div class="     light-blue-text text-darken-3">
 
 
-					<div class = "hide-on-large-only" >
-					<div class="card white blue-grey text-darken-3" >
-					<div class="white valign-wrapper card-content light-blue-text text-darken-3">
-					<div  >
-					<CalendarHeatmap
-					horizontal={true}
-					startDate={this.state.yearBefore}
-					endDate={this.state.today}
-					values={this.getGitCommits()}
-					classForValue={(value) => {
-						if (!value) {
-							return 'color-empty';
-						}
-						if (value.count>=4){
-							return 'color-scale-4'
-						}
-						return `color-scale-${value.count}`;
-					}}
-					/>
-					</div>
-					</div>
-					</div>
+					<div class="row ">
+
+						<div class="  col offset-m2 offset-s2 s10 m10">
+							<div style={paddingRight} class="center">
+							<CalendarHeatmap
+							style={styleSmall400}
+							horizontal={true}
+							startDate={this.state.yearBefore}
+							endDate={this.state.today}
+							values={this.getGitCommits()}
+							classForValue={(value) => {
+								if (!value) {
+									return 'color-empty';
+								}
+								if (value.count>=4){
+									return 'color-scale-4'
+								}
+								return `color-scale-${value.count}`;
+							}}
+							/>
+							</div>
+						</div>
 					</div>
 
+					 
+						<div class="col  s12 m12">
+							<div class="center center-align">
+								<img href="http://www.github.com/JayLohokare" alt="Github" class="" src="images/Git.png" style={gitImageStyle}/>
+							</div>
+							<p class="white-text center">
+							{this.getReposCount()} Repositories 
+							</p>
+							<p class="white-text center">
+							{this.state.commitsCount} Commits in past 90 days
+							</p>
+						</div>
 
-					<div class = " hide-on-large-only" >
-					<div class="card white blue-grey text-darken-3" >
-					<div class="white center valign-wrapper card-content light-blue-text text-darken-3">
-					<div>
-					<div class="center center-align">
-					{this.getReposCount()}
-					</div>
-					</div>
-					</div>
-					</div>
-					</div>
+						 
 
+
+
+					 
+
+				</div>
 
 
 				</footer>

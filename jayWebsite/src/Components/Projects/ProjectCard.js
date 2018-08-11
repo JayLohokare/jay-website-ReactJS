@@ -3,7 +3,7 @@ import React from 'react';
 
 
 const newLineStyle = {
-  padding: '2px',
+  padding: '6px',
 }
 const fabStyle = {
   bottom: '-25px',
@@ -36,10 +36,16 @@ class ProjectCard extends React.Component {
 
 
                     {
-                      this.props.project.description.split('\\').map((item)=>
-                        <p    class="black-text">
-                            {item}
-                        </p>
+                      this.props.project.description.split('\\\\').map((item)=>
+                        
+                        <div  style={newLineStyle} class="black-text">
+                            {item.split('\\').map((item)=>
+                              <p>
+                                {item}
+                              </p>
+
+                              )}
+                        </div>
                        
 
                       )

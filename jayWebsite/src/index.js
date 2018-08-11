@@ -9,12 +9,12 @@ import GitHubDashboard from './Components/GitHub/GitHubDashboard';
 
 
 
-
 ReactDOM.render(
 	 <Fragment>
-  		<AxiosApproach />
-  		 
-  		<GitHubDashboard />
+
+	 	<AxiosApproach/>
+	 	<GitHubDashboard />
+  		
    
   	</Fragment>
 	, document.getElementById('react'));
