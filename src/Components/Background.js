@@ -13,7 +13,7 @@ class Background extends React.Component {
     render() {
         return (
 
-         <img src="images/back.jpg" style={imageStyle}
+         <img src="images/back.jpg" style={imageStyle} alt="background"
 		  /> 
 
         );

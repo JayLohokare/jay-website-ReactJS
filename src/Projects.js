@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 
-import AxiosApproach from './Projects/ProjectsRESTAPI';
-import GithubContainer from './Projects/GithubContainer';
 import Navbar from './Components/Navbar';
 import Background from './Components/Background';
+import ProjectsRESTAPI from './Projects/ProjectsRESTAPI';
+import GitHubDashboard from './Projects/GitHubDashboard';
+import ProjectsNavbar from './Projects/ProjectsNavbar';
 
-
+const stylePadding = {
+	padding: '15px',
+	paddingTop: '100px',
+	 
+}
 
 class Projects extends Component {
 	render() {
 	  return (
 		<div>
 			<Navbar fixed={true}/>
+			
 			<Background/>
-			<GithubContainer />
-			<AxiosApproach/>
 			
+			<ProjectsNavbar/>
 			
-			
+			<div style={stylePadding}>
+				<ProjectsRESTAPI/>
+				<GitHubDashboard />
+			</div>
 		</div>
 		);	
 	}

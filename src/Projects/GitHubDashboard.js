@@ -19,11 +19,13 @@
 	const footerStyle = {
 		display: 'flex',
 		minHeight: '20%',
-		maxHeight: '30%',
+		maxHeight: '60%',
 		flexDirection: 'column',
 		flex:  'auto',
-		padding: '50px',
-		outlineStyle: 'solid'
+		padding: '20px',
+		outlineStyle: 'solid',
+		marginTop: '100px'
+		
 	}
 
 

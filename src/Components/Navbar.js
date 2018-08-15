@@ -4,14 +4,15 @@ import React, { Component } from 'react';
 const styleMenuButton = {
   zIndex: '9999', 
   color: '#eeeeee',
-  padding: '20px',
+  padding: '8px',
+  paddingLeft: '20px',
   position:'fixed',
   width: '10vw'
 }
 
 
 const styleZindez = {
-  zIndex: '999999',
+  zIndex: '10000',
 }
 
 const styleSocialMedia = {
@@ -22,6 +23,10 @@ const styleSocialIcons = {
   float: 'center',
   width:'initial', 
   height: 'inherit'
+}
+
+const styleFixed = {
+  position: 'fixed'
 }
 
 class Navbar extends Component {
@@ -43,15 +48,17 @@ class Navbar extends Component {
     
     return (
       <div>
+
+       
               
           <ul id="slide-out" className={this.state.navClass}  style={styleZindez}>
             <li>
               <div className="user-view grey darken-4">
                 <div className="background">
-                  <img src="images/office.jpg"></img>
+                  <img src="images/office.jpg" alt="backgroundImage"></img>
                 </div>
 
-                <img className="circle" src="images/jay.jpg"></img>
+                <img className="circle" src="images/jay.jpg" alt="jayLohokare"></img>
                 <span className="white-text name">Jay Lohokare</span>
                 <a href="mailto:jaylohokare@gmail.com"><span className="white-text email">jaylohokare@gmail.com</span></a>
               </div>
@@ -108,6 +115,8 @@ class Navbar extends Component {
           <a href="#" data-activates="slide-out" className="button-collapse" style={styleMenuButton}>
             <i className=" zmdi zmdi-menu zmdi-hc-3x animated infinite wobble"></i>
           </a>
+          
+         
 
         </div>
     );

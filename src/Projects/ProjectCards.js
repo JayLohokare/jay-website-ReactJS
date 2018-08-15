@@ -15,23 +15,21 @@ const notFullScreenHeight = {
 class ProjectCards extends React.Component {
     render() {
         return (
-            <ul>
-
-              <div class = "col hide-on-med-and-down l12 " style={fullScreenHeight}>
-                  <div class="newLineStyle">
+            <div>
+              <div className = "col hide-on-med-and-down l12 " style={fullScreenHeight}>
+                  <div className="newLineStyle">
                   </div>
                   <div>
                     {
                   this.props.data.map(project =>
                       <ProjectCard project={project}/>
-                      
                 )}
                   </div>
               </div>
 
 
-              <div class = "col hide-on-large-only s12 m12 " style={notFullScreenHeight}>
-                  <div class="newLineStyle">
+              <div className="col hide-on-large-only s12 m12 " style={notFullScreenHeight}>
+                  <div className="newLineStyle">
                   </div>
                   
                   <div>
@@ -39,12 +37,11 @@ class ProjectCards extends React.Component {
                             this.props.data.map(project =>
 
                               <ProjectCard project={project}/>
-                                
-
+                              
                           )}
                   </div>
               </div>
-            </ul>
+            </div>
         );
     }
 }

@@ -15,17 +15,16 @@ class ProjectCard extends React.Component {
     
     render() {
         return (
-            <div class="row">
+            <div className="row">
             
-                <div class="col l12 card white blue-grey text-darken-3" >
-                  <div class="white card-content light-blue-text text-darken-3">
+                <div className="col l12 card white blue-grey text-darken-3" >
+                  <div className="white card-content light-blue-text text-darken-3">
 
-                  
-                    <h5 class=" light-blue-text text-darken-3">{this.props.project.title}</h5>
+                    <h5 className=" light-blue-text text-darken-3">{this.props.project.title}</h5>
 
                     {
                       this.props.project.tags.split(',').map((item)=>
-                          <div class="chip light-blue-text text-darken-2">
+                          <div className="chip light-blue-text text-darken-2">
                             {item}
                          </div>
                       )
@@ -33,12 +32,10 @@ class ProjectCard extends React.Component {
 
                     <div style={newLineStyle}></div>
                     
-
-
                     {
                       this.props.project.description.split('\\\\').map((item)=>
                         
-                        <div  style={newLineStyle} class="black-text">
+                        <div  style={newLineStyle} className="black-text">
                             {item.split('\\').map((item)=>
                               <p>
                                 {item}
@@ -53,7 +50,7 @@ class ProjectCard extends React.Component {
 
                   </div>
 
-                   <a  style={fabStyle} href={this.props.project.url} class="right btn-floating btn-large waves-effect waves-light pink"><i class="zmdi zmdi-github"></i></a>
+                   <a  style={fabStyle} href={this.props.project.url} className="right btn-floating btn-large waves-effect waves-light pink"><i className="zmdi zmdi-github"></i></a>
  
                 </div>
 

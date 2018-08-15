@@ -85,7 +85,6 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white blue-grey text-darken-3" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h6 className="center flow-text light-blue-text text-darken-3"></h6>
                       <br/>
                       <p className="black-text">
                         You can find all my projects on my Github account and presentations on Slideshare. Have a look at my Blog where I share my experiences, opinions and thoughts!
