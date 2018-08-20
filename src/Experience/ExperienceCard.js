@@ -10,15 +10,10 @@ const fabStyle = {
 
 const styleImage = {
   float: 'center',
-   
-  height: '20vh'
+  height: '7vh'
 }
 
-const styleImageSmall = {
-  float: 'center',
-   
-  width: '20vw'
-}
+
 
 class ExperienceCard extends React.Component {
     render() {
@@ -28,11 +23,11 @@ class ExperienceCard extends React.Component {
                   <div className="white card-content ">
 
                     <div className="row valign-wrapper hide-on-small-only">
-                      <div className="col s2 m2 l2 center valign-wrapper" style={styleImage}>
+                      <div className="col s1 m1 l1 center valign-wrapper" style={styleImage}>
                           <img src={this.props.experience.image_url} alt={this.props.experience.company} className="circle responsive-img"/>
                         </div>
 
-                      <div className="col s9 m9 l9">
+                      <div className="col s11 m11 l11">
                         <a href={this.props.experience.url}>
                           <h5 className="light-blue-text text-darken-4">{this.props.experience.company}</h5>
                         </a>

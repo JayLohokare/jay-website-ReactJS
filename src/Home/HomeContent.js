@@ -86,7 +86,6 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text light-blue-text text-darken-3">Research background</h4>
                      
                       <p className="black-text">
-                          
                           I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
                           At Stony Brook University, I am a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab.
                           At these labs, I work mainly in various applied deep learning domains and big data systems.
@@ -97,7 +96,7 @@ class HomeContent extends React.Component {
                       <br/>
 
                       <div className="center">
-                        <a className="center  red darken-1 white-text waves-effect waves-light btn" href="https://scholar.google.com/citations?hl=en&user=mV0ZrH4AAAAJ">
+                        <a className="center  light-blue darken-1 white-text waves-effect waves-light btn" href="https://scholar.google.com/citations?hl=en&user=mV0ZrH4AAAAJ">
                         Google Scholars
                         </a>
                       </div>
@@ -121,7 +120,7 @@ class HomeContent extends React.Component {
                         <br/>
                         I am closely related to USA based startups <a href="http://www.insurebits.io">Insurebits</a> and <a href="http://www.daix.io">Daix</a>, having led development of their core technology/data platforms.
                         
-                        I have interned with NTT DATA (Tokyo) and McKinsey & Co (New York), and have consulted multiple companies in Pune-Mumbai, New York, San Francisc, Munich and Seattle.
+                        I have interned with NTT DATA (Tokyo) and McKinsey & Co (New York), and have consulted multiple companies in Pune-Mumbai, New York, San Francisco, Munich and Seattle.
                         
                       </p>
                       <br/>
