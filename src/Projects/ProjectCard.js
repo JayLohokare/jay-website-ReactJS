@@ -18,17 +18,20 @@ class ProjectCard extends React.Component {
             <div className="row">
             
                 <div className="col l12 card white blue-grey text-darken-3" >
+                
                   <div className="white card-content light-blue-text text-darken-3">
-
-                    <h5 className=" light-blue-text text-darken-3">{this.props.project.title}</h5>
-
+                    <h5 style={newLineStyle} className="   light-blue-text text-darken-4">{this.props.project.title}</h5>
+                       
+                   
                     {
                       this.props.project.tags.split(',').map((item)=>
-                          <div className="chip light-blue-text text-darken-2">
+                          <div className="chip  text-darken-2">
                             {item}
                          </div>
                       )
                     }
+                    <br/>
+                      
 
                     <div style={newLineStyle}></div>
                     

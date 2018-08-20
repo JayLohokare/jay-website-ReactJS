@@ -9,7 +9,7 @@ const projectsAPI = 'http://18.219.99.237:8000/projects/'
 class ProjectRESTAPI extends Component {
 
   showGitError(){
-      M.toast('Something went wrong trying to fetch projects :(', 4000);
+      M.toast('Something went wrong trying to fetch projects :(', 4000, 'rounded');
     }
 
   log(){
@@ -20,7 +20,7 @@ class ProjectRESTAPI extends Component {
     super(props);
     this.state = {
       data: [],
-      isLoading: false,
+      isLoading: true,
       error: null,
     };
   }
@@ -36,7 +36,7 @@ class ProjectRESTAPI extends Component {
       }))
       .catch(error => this.setState({
         error,
-        isLoading: false
+        // isLoading: false
       }));
   }
 

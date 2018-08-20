@@ -12,10 +12,16 @@ const notFullScreenHeight = {
   height: '100vh'
 }
 
+const stylePaddingBottom = {
+    paddingBottom: '200px',
+    marginBottom:'200px'
+  }
+  
+
 class ProjectCards extends React.Component {
     render() {
         return (
-            <div>
+            <div  style={stylePaddingBottom}>
               <div className = "col hide-on-med-and-down l12 " style={fullScreenHeight}>
                   <div className="newLineStyle">
                   </div>

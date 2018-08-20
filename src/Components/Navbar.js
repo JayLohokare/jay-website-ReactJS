@@ -19,9 +19,6 @@ const styleSocialMedia = {
   paddingLeft: '32.5px'
 }
 
-const styleFixed = {
-  position: 'fixed'
-}
 
 class Navbar extends Component {
   constructor(props) {
@@ -39,12 +36,9 @@ class Navbar extends Component {
 
   render() {
     
-    
     return (
       <div>
-
-       
-              
+   
           <ul id="slide-out" className={this.state.navClass}  style={styleZindez}>
             <li>
               <div className="user-view grey darken-4">
@@ -60,7 +54,7 @@ class Navbar extends Component {
 
             <li><a className = "waves-effect" href="/">Home</a></li>
             <li><a className = "waves-effect" href="blog/index.html">Blog</a></li>
-            <li><a className = "waves-effect" href="#!">Experience</a></li>
+            <li><a className = "waves-effect" href="/experience">Experience</a></li>
             <li><a className = "waves-effect" href="#!">Education</a></li>
 
 

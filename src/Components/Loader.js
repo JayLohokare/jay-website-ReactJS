@@ -2,20 +2,18 @@ import React from 'react';
 
 
 const loaderStyle = {
+    zIndex: '99999',
     position: 'absolute',
     top: '50%',
     left: '53%',
     marginTop: '-50px',
     marginLeft: '-50px',
-    width: '100px',
-    height: '100px'
+    width: '400px',
+    height: '400px'
 
 }
 
 class Loader extends React.Component {
-    // myCallback = (dataFromChild) => {
-        
-    // },
     render() {
         return (
             <div style={loaderStyle} class="preloader-wrapper big active">

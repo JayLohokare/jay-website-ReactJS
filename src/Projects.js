@@ -6,6 +6,7 @@ import ProjectsRESTAPI from './Projects/ProjectsRESTAPI';
 import GitHubDashboard from './Projects/GitHubDashboard';
 import ProjectsNavbar from './Projects/ProjectsNavbar';
 
+
 const stylePadding = {
 	padding: '15px',
 	paddingTop: '100px',
@@ -24,6 +25,7 @@ class Projects extends Component {
 			
 			<div style={stylePadding}>
 				<ProjectsRESTAPI/>
+				<br/> 
 				<GitHubDashboard />
 			</div>
 		</div>

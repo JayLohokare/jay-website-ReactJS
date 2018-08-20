@@ -75,7 +75,9 @@
 	class GitHubDashboard extends Component {
 
 		showGitError(){
-			M.toast('Try again after some time to get correct Github statistics', 4000);
+			M.Toast.removeAll();
+			M.toast('Try again after some time to get correct Github statistics', 4000, 'rounded');
+			 
 		}
 		
 		getReposCount(){
