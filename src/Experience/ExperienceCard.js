@@ -1,13 +1,5 @@
 import React from 'react';
 
-const newLineStyle = {
-  padding: '6px',
-}
-const fabStyle = {
-  bottom: '-25px',
-}
- 
-
 const styleImage = {
   float: 'center',
   height: '7vh'

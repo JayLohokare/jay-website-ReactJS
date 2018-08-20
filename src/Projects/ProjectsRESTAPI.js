@@ -4,6 +4,8 @@ import ProjectCards from './ProjectCards';
 import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
+import GitHubDashboard from './GitHubDashboard';
+
 const projectsAPI = 'http://18.219.99.237:8000/projects/'
 
 class ProjectRESTAPI extends Component {
@@ -36,7 +38,7 @@ class ProjectRESTAPI extends Component {
       }))
       .catch(error => this.setState({
         error,
-        // isLoading: false
+        isLoading: false
       }));
   }
 
@@ -58,7 +60,8 @@ class ProjectRESTAPI extends Component {
     return (
       <div>
         <ProjectCards data={data} />
-        
+        <br/> 
+				<GitHubDashboard />
       </div>
       
 			

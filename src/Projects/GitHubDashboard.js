@@ -267,10 +267,7 @@
 			}
 
 
-			if (isLoading) {
-				return <Loader />;
-			}
-
+			 
 			return (
 
 				<div>

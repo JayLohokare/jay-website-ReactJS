@@ -55,7 +55,7 @@ class Navbar extends Component {
             <li><a className = "waves-effect" href="/">Home</a></li>
             <li><a className = "waves-effect" href="blog/index.html">Blog</a></li>
             <li><a className = "waves-effect" href="/experience">Experience</a></li>
-            <li><a className = "waves-effect" href="#!">Education</a></li>
+            <li><a className = "waves-effect" href="/education">Education</a></li>
 
 
             <li><div className="divider"></div></li>
@@ -63,6 +63,7 @@ class Navbar extends Component {
             <li><a className = "waves-effect" href="#!">Resume</a></li>
             <li><a className = "waves-effect" href="/projects">Projects</a></li>
             <li><a className = "waves-effect" href="#!">Publications</a></li>
+            <li><a className = "waves-effect" href="#!">Awards</a></li>
 
             <li><div className="divider"></div></li>
 

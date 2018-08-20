@@ -48,7 +48,7 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text light-blue-text text-darken-3">Hello!</h4>
+                      <h4 className="center flow-text red-text text-darken-2">Hello!</h4>
                       
                       <p className="black-text">
                           I'm Jay Lohokare, a Graduate student pursuing Masters in Computer Science at Stony Brook University.
@@ -83,7 +83,7 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text light-blue-text text-darken-3">Research background</h4>
+                      <h4 className="center flow-text red-text text-darken-2">Research background</h4>
                      
                       <p className="black-text">
                           I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
@@ -113,7 +113,7 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white blue-grey text-darken-3" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text light-blue-text text-darken-3">Startup/Industry experience</h4>
+                      <h4 className="center flow-text red-text text-darken-2">Startup/Industry experience</h4>
                        
                       <p className="black-text">
                         I formed and led a tech-startup <a href="http://www.skylinelabs.in">'Skyline Labs'</a> during my undergraduate years. At its peak, we were a team of 15 members working with various startups, companies and institutes to create smart digital solutions and products. I have worked with several other startups helping them with technology implementation and business strategy.

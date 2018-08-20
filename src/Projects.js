@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Navbar from './Components/Navbar';
 import Background from './Components/Background';
 import ProjectsRESTAPI from './Projects/ProjectsRESTAPI';
-import GitHubDashboard from './Projects/GitHubDashboard';
 import ProjectsNavbar from './Projects/ProjectsNavbar';
 
 
@@ -25,8 +24,7 @@ class Projects extends Component {
 			
 			<div style={stylePadding}>
 				<ProjectsRESTAPI/>
-				<br/> 
-				<GitHubDashboard />
+				
 			</div>
 		</div>
 		);	
