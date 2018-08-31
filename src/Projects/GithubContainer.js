@@ -13,10 +13,16 @@ const stylesProjectsNavBar = {
 class GithubContainer extends React.Component {
     render() {
         return (
-
          <div>
-            <GitHubDashboard/>
-         </div> 
+            <div className="hide-on-med-and-down" style={stylesProjectsNavBar}>
+                <GitHubDashboard/>
+            </div> 
+
+            <div className="hide-on-large-only" style={stylesPadding15}>
+                <GitHubDashboard/>
+            </div> 
+         </div>
+         
         );
     }
 }

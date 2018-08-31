@@ -13,7 +13,7 @@ const notFullScreenHeight = {
 }
 
 const stylePaddingBottom = {
-    marginBottom:'900px'
+    marginBottom:'200px'
 }
 
 const styleCardSize = {
