@@ -43,7 +43,7 @@
 
 	const footerSmallAddPadStyle = {
 		paddingTop: '00px',
-		marginTop: '720px',
+		marginTop: '10px',
 	}
  
 
@@ -257,7 +257,7 @@
 			 
 			return (
 
-				<div>
+				<div className="row">
 					<div className="hide-on-med-and-down" style={footerAddPadStyle}>
 						<footer className="  page-footer" style={footerStyle}>
 							<div className="light-blue-text text-darken-3">

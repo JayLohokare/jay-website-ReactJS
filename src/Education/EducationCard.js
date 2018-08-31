@@ -1,13 +1,5 @@
 import React from 'react';
 
-const styleImage = {
-  float: 'center',
-  height: '7vh'
-}
-
-const styleImage300px = {
-  height: '100px',
-}
 
 const styleCardContentHeight= {
   height: '200px',
@@ -15,6 +7,14 @@ const styleCardContentHeight= {
   paddingBottom: '20px'
 }
 
+
+const styleImage300px = {
+  height: '100px', 
+}
+
+const cardBackground = {
+  backgroundColor: 'rgb(1,87,155, 0.5)',
+}
 
 
 class EducationCard extends React.Component {

@@ -15,9 +15,7 @@ const styleZindez = {
   zIndex: '10000',
 }
 
-const styleSocialMedia = {
-  paddingLeft: '32.5px'
-}
+ 
 
 
 class Navbar extends Component {

@@ -13,7 +13,7 @@ const notFullScreenHeight = {
 }
 
 const stylePaddingBottom = {
-    marginBottom:'200px'
+    marginBottom:'00px'
 }
 
 const styleCardSize = {
@@ -34,6 +34,7 @@ class ProjectCards extends React.Component {
                             </div>
                         )}
                     </div>
+
                 </div>
               
 
@@ -49,6 +50,8 @@ class ProjectCards extends React.Component {
                     </div>
                    
                 </div>
+
+                
 
             </div>
         );

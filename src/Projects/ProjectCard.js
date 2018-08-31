@@ -51,21 +51,22 @@ class ProjectCard extends React.Component {
       console.log("This is image url ", sec_url)
       var json = JSON.parse(sec_url)
       var imageURL = json.image.toString()
+      var render = null;
 
-      if (imageURL != ""){
-        var render = 
+      if (imageURL !== ""){
+        render = 
         <div className=" center  ">
           <br></br>
           <br></br>
           <br></br>
-          <img  style={imageOverlayWhite} className=" white-text center" src={imageURL}/>
+          <img  style={imageOverlayWhite} alt={title} className=" white-text center" src={imageURL}/>
            
         </div>
 
         return render
       }
       else{
-        var render = 
+        render = 
         <div style={styleTextHeaderPadding}>
           <br></br>
           <br></br>
@@ -78,7 +79,7 @@ class ProjectCard extends React.Component {
       }
     }
     catch(error){
-      var render = 
+        render = 
         <div style={styleTextHeaderPadding}>
           <br></br>
           <br></br>
