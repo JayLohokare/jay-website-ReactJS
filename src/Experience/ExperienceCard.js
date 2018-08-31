@@ -7,15 +7,16 @@ const styleImage300px = {
 
 const cardBackground = {
   backgroundColor: 'rgb(1,87,155, 0.5)',
+  marginBottom: '-15px',
+  padding: '20px',
+  height: '200px'
 }
 
 
 const styleCardContentHeight= {
-  height: '380px',
+  height: '240px',
   overflow: 'auto', 
 }
-
-
 
 
 class ExperienceCard extends React.Component {
@@ -44,43 +45,30 @@ class ExperienceCard extends React.Component {
     render() {
         return (
               <div >
-                <div className="card text-darken-3" style={cardBackground}>
-                  <div className="  card-content " style={styleCardContentHeight}>
-
-                    <div className="hide-on-small-only">
-                          <div className="right">
-                            {this.showProjectCardHeader(this.props.experience.image_url, this.props.experience.company)}
-                            {/* <img src={this.props.experience.image_url} alt={this.props.experience.company} style={styleImage300px}/> */}
-                          </div>
-                      
-                          <a href={this.props.experience.url}>
-                            <h5 className="  white-text text-darken-4">{this.props.experience.company}</h5>
-                          </a>
-                          <h6 className="  white-text text-darken-4">{this.props.experience.title}</h6>
-                          <p className="  white-text">{this.props.experience.location}</p>
-                          <p className="  white-text">{this.props.experience.year}</p>
-                          <br/>
-                          <p className="white-text">{this.props.experience.description}</p>
+                
+                 <div style={cardBackground}>
+                    <div className="right hide-on-med-and-down" >
+                      {this.showProjectCardHeader(this.props.experience.image_url, this.props.experience.company)}
+                      {/* <img src={this.props.experience.image_url} alt={this.props.experience.company} style={styleImage300px}/> */}
                     </div>
+                    <a href={this.props.experience.url}>
+                    <h5 className="  white-text text-darken-4">{this.props.experience.company}</h5>
+                    </a>
 
+                    <h6 className="  white-text text-darken-4">{this.props.experience.title}</h6>
+                    <p className="  white-text">{this.props.experience.location}</p>
+                    <p className="  white-text">{this.props.experience.year}</p>
+                  </div>
 
-                    
-                    <div className="  valign-wrapper hide-on-med-and-up">
-                      <div className="col s12 ">
-                        
-                        <a href={this.props.experience.url}>
-                          <h5 className="white-text text-darken-4">{this.props.experience.company}</h5>
-                        </a>
-                        <h6 className="white-text text-darken-4">{this.props.experience.title}</h6>
-                        <p className="white-text">{this.props.experience.location}</p>
-                        <p className="white-text">{this.props.experience.year}</p>
-                        <p className="white-text">{this.props.experience.description}</p>
-                      </div>
+                <div className="card text-darken-3" >
+                  <div className=" card-content " style={styleCardContentHeight}>
+                    <div className=" ">
+                          <p className="black-text">{this.props.experience.description}</p>
                     </div>
-
-
                   </div>
                 </div>
+
+
               </div>
 
        
@@ -93,6 +81,21 @@ export default ExperienceCard;
 
 
 
+
+
+                    {/* <div className="  valign-wrapper hide-on-med-and-up">
+                      <div className="col s12 ">
+                        
+                        <a href={this.props.experience.url}>
+                          <h5 className="white-text text-darken-4">{this.props.experience.company}</h5>
+                        </a>
+                        <h6 className="white-text text-darken-4">{this.props.experience.title}</h6>
+                        <p className="white-text">{this.props.experience.location}</p>
+                        <p className="white-text">{this.props.experience.year}</p>
+                        
+                        <p className="white-text">{this.props.experience.description}</p>
+                      </div>
+                    </div> */}
 
 
 

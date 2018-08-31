@@ -13,7 +13,7 @@ const notFullScreenHeight = {
 }
 
 const styleCardSize={
-    height: '400px',
+    height: '450px',
   }
 
 class ExperienceCards extends React.Component {
