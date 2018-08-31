@@ -105,9 +105,9 @@
 			this.state.commitsCount = i;
 			this.state.allCommitsReceived = true;
 
-			console.log("Data 1 " + commits.length);
-			console.log("Data 2 " + this.state.data2.length);
-			console.log("Data 3 " + this.state.data3.length);
+			// console.log("Data 1 " + commits.length);
+			// console.log("Data 2 " + this.state.data2.length);
+			// console.log("Data 3 " + this.state.data3.length);
 
 			var dict = {};
 

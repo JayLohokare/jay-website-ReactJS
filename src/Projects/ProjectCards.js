@@ -13,40 +13,43 @@ const notFullScreenHeight = {
 }
 
 const stylePaddingBottom = {
-    paddingBottom: '200px',
-    marginBottom:'200px'
-  }
-  
+    marginBottom:'900px'
+}
+
+const styleCardSize = {
+    height: '800px'
+}
 
 class ProjectCards extends React.Component {
     render() {
         return (
-            <div  style={stylePaddingBottom}>
-              <div className = "col hide-on-med-and-down l12 " style={fullScreenHeight}>
-                  <div className="newLineStyle">
-                  </div>
-                  <div>
-                    {
-                  this.props.data.map(project =>
-                      <ProjectCard project={project}/>
-                )}
-                  </div>
-              </div>
+            <div   style={stylePaddingBottom}>
 
-
-              <div className="col hide-on-large-only s12 m12 " style={notFullScreenHeight}>
-                  <div className="newLineStyle">
-                  </div>
-                  
-                  <div>
-                  {
+                <div className="row hide-on-med-and-down" style={fullScreenHeight}>
+                    <div>
+                        {
                             this.props.data.map(project =>
+                            <div className = "col  l6 " style={styleCardSize} >
+                                <ProjectCard project={project}/>
+                            </div>
+                        )}
+                    </div>
+                </div>
+              
 
-                              <ProjectCard project={project}/>
-                              
-                          )}
-                  </div>
-              </div>
+            
+                <div className="row hide-on-large-only" style={notFullScreenHeight}>
+                    <div>
+                        {   
+                            this.props.data.map(project =>
+                            <div className="col  s12 m12 " >
+                                <ProjectCard project={project}/>   
+                            </div>        
+                        )}
+                    </div>
+                   
+                </div>
+
             </div>
         );
     }

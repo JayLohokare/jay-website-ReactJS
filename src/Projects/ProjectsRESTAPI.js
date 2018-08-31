@@ -59,9 +59,7 @@ class ProjectRESTAPI extends Component {
 
     return (
       <div>
-        <ProjectCards data={data} />
-        <br/> 
-				<GitHubDashboard />
+        <ProjectCards data={data} /> 
       </div>
       
 			

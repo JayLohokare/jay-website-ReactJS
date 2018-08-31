@@ -95,12 +95,12 @@ class HomeContent extends React.Component {
                       </p>
                       <br/>
 
-                      <div className="center">
+                      {/* <div className="center">
                         <a className="center  light-blue darken-1 white-text waves-effect waves-light btn" href="https://scholar.google.com/citations?hl=en&user=mV0ZrH4AAAAJ">
                         Google Scholars
                         </a>
                       </div>
-                      <br/>
+                      <br/> */}
 
                     </div>
                   </div>
