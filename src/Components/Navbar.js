@@ -60,29 +60,17 @@ class Navbar extends Component {
 
             <li><div className="divider"></div></li>
 
-            <li><a className = "waves-effect" href="#!">Resume</a></li>
+            <li><a className = "waves-effect" target="_blank" href="/docs/CV.pdf">Resume</a></li>
             <li><a className = "waves-effect" href="/projects">Projects</a></li>
             <li><a className = "waves-effect" href="#!">Publications</a></li>
             <li><a className = "waves-effect" href="#!">Awards</a></li>
 
             <li><div className="divider"></div></li>
 
+            
+            <li><a className = "waves-effect" href="#!">Social Media</a></li>
 
-            <li >
-              <ul className="collapsible collapsible-accordion">
-                <li><a className="collapsible-header" style={styleSocialMedia}>Social media</a>
-
-                  <div className="collapsible-body">
-                    <ul>
-                      <li><a href="https://www.facebook.com/jaylohokare251095">Facebook</a></li>
-                      <li><a href="https://www.instagram.com/jaylohokare">Instagram</a></li>
-                    </ul>
-                  </div>
-                </li>
-
-              </ul>
-            </li>
-
+           
             <br/>
 
             {/* <li>

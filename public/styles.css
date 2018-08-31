@@ -6,7 +6,7 @@
 .react-calendar-heatmap .color-scale-4 { fill: #1e6823; }
 .react-calendar-heatmap {padding: 10px;  left: 60%; width:100%; float:left;}
 
-.react-calendar-heatmap-month-label  {font-size: 8px; padding: 10px;  left: 60%; width:100%; float:left;}
+.react-calendar-heatmap-month-label  {font-size: 8px; color:#ffffff; color_name:#ffffff; padding: 10px;  left: 60%; width:100%; float:left;}
 
 
 

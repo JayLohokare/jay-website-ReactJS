@@ -21,8 +21,8 @@
 		flex:  'auto',
 		padding: '20px',
 		outlineStyle: 'solid',
-		marginTop: '100px'
-		
+		marginTop: '100px',
+		backgroundColor: 'rgb(255, 0, 0, 0.3)',
 	}
 
 
@@ -33,7 +33,8 @@
 		flexDirection: 'column',
 		flex:  'auto',
 		padding: '50px',
-		outlineStyle: 'solid'
+		outlineStyle: 'solid',
+		backgroundColor: 'rgb(255, 0, 0, 0.3)',
 	}
 
 	const footerAddPadStyle = {
@@ -258,10 +259,10 @@
 
 				<div>
 					<div className="hide-on-med-and-down" style={footerAddPadStyle}>
-						<footer className="red page-footer" style={footerStyle}>
+						<footer className="  page-footer" style={footerStyle}>
 							<div className="light-blue-text text-darken-3">
 								<div className="row ">
-									<div  className="col l2 offset-l5 ">
+									<div  className="col l4 offset-l4 ">
 										<CalendarHeatmap
 										horizontal={true}
 										startDate={this.state.yearBefore}
@@ -299,7 +300,7 @@
 
 
 					<div className="hide-on-large-only" style={footerSmallAddPadStyle}>
-						<footer className="red page-footer" style={footerSmallStyle}>
+						<footer className="  page-footer" style={footerSmallStyle}>
 							<div className="light-blue-text text-darken-3">
 								<div className="row ">
 									<div className="col  s12 m6 offset-m3" style={padding30px}>
