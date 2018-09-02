@@ -17,7 +17,13 @@ const stylePaddingBottom = {
 }
 
 const styleCardSize = {
-    height: '800px'
+    height: '750px'
+}
+
+const paddingInfoCard ={
+    margin: '10px',
+    backgroundColor: 'rgb(1,87,155, 0.5)',
+    marginBottom: '30px'
 }
 
 class ProjectCards extends React.Component {
@@ -25,8 +31,11 @@ class ProjectCards extends React.Component {
         return (
             <div   style={stylePaddingBottom}>
 
+                
                 <div className="row hide-on-med-and-down" style={fullScreenHeight}>
                     <div>
+                        
+
                         {
                             this.props.data.map(project =>
                             <div className = "col  l6 " style={styleCardSize} >
@@ -41,6 +50,8 @@ class ProjectCards extends React.Component {
             
                 <div className="row hide-on-large-only" style={notFullScreenHeight}>
                     <div>
+                       
+                       
                         {   
                             this.props.data.map(project =>
                             <div className="col  s12 m12 " >

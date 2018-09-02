@@ -63,28 +63,9 @@ class Navbar extends Component {
             <li><a className = "waves-effect" href="#!">Publications</a></li>
             <li><a className = "waves-effect" href="#!">Awards</a></li>
 
-            <li><div className="divider"></div></li>
-
-            
             <li><a className = "waves-effect" href="#!">Social Media</a></li>
 
-           
             <br/>
-
-            {/* <li>
-              <div className="container center">
-                <div className="row center">
-                  <div className="col s4 m4 l4"><a href="https://www.linkedin.com/in/jaylohokare" className="center center-align btn-floating blue white-text" ><i className=" zmdi zmdi-linkedin-box " style={styleSocialIcons}></i></a> 
-                  </div>
-
-                  <div className="col s4 m4 l4"><a href= "https://github.com/JayLohokare" className=" center-align btn-floating grey darken-3 white-text" ><i className="zmdi zmdi-github" style={styleSocialIcons}></i></a>
-                  </div>
-
-                  <div className="col  s4 m4 l4"><a href="https://www.slideshare.net/jaylohokare7/" className="center-align  btn-floating blue white-text" ><i className="zmdi zmdi-slideshare" style={styleSocialIcons}></i></a>
-                  </div>
-                </div>
-              </div>
-            </li> */}
 
           </ul>
            

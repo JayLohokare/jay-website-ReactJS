@@ -25,7 +25,7 @@ const styleTextHeaderPadding = {
 }
 
 const styleCardContentHeight= {
-  height: '500px',
+  height: '450px',
   paddingBottom: '80px',
   overflow: 'auto',
    
