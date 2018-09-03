@@ -3,9 +3,10 @@ ReactJS code for jaylohokare.com
 
 Dependencies imports:
 ```
-import axios from 'axios';
-import CalendarHeatmap from 'react-calendar-heatmap';
-import M from 'materialize-css';
+npm install axios
+npm install react-calendar-heatmap
+npm install materialize-css
+npm install --save axios-cache-adapter
 ```
 
 To run the website server:

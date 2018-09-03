@@ -2,7 +2,14 @@
 	import axios from 'axios';
 	import CalendarHeatmap from 'react-calendar-heatmap';
 	import M from 'materialize-css';
+	import { setup } from 'axios-cache-adapter';
 
+	const apiAxiosCache = setup({
+		cache: {
+		  maxAge: 15 * 60 * 1000
+		  //Cache data from API for 15 mins!
+		}
+	  })
 
 	const EventsAPI1 = 'https://api.github.com/users/jayLohokare/events?page=1'
 	const EventsAPI2 = 'https://api.github.com/users/jayLohokare/events?page=2'
@@ -67,9 +74,8 @@
 
 		showGitError(){
 			M.Toast.removeAll();
-			M.toast('Try again after some time to get correct Github statistics', 4000, 'rounded');
-			 
-		}
+			M.toast('Some components may not load as API limit exceeded for your IP', 4000, 'rounded');
+    }
 		
 		getReposCount(){
 			var repo1 = this.state.repos1;
@@ -209,7 +215,10 @@
 
 
 		    //Making 3 seperate API calls for getting 90 projects from GIT
-		    axios.get(ReposAPI1)
+			apiAxiosCache({
+				url: ReposAPI1,
+				method: 'get'
+			  })
 		    .then(result => this.setState({
 		    	repos1: result.data,
 		    	isLoading: false
@@ -220,7 +229,10 @@
 		    }));
 
 
-		    axios.get(ReposAPI2)
+		    apiAxiosCache({
+				url: ReposAPI1,
+				method: 'get'
+			  })
 		    .then(result => this.setState({
 		    	repos2: result.data,
 		    	isLoading: false
@@ -231,7 +243,10 @@
 		    }));
 
 
-		    axios.get(ReposAPI3)
+		    apiAxiosCache({
+				url: ReposAPI1,
+				method: 'get'
+			  })
 		    .then(result => this.setState({
 		    	repos3: result.data,
 		    	isLoading: false

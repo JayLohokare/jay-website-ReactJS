@@ -12,7 +12,8 @@ const projectsAPI = 'http://18.219.99.237:8000/projects/'
 class ProjectRESTAPI extends Component {
 
   showGitError(){
-      M.toast('Something went wrong trying to fetch projects :(', 4000, 'rounded');
+   	
+      M.toast('Some components may not load as API limit exceeded', 4000, 'rounded');
     }
 
   log(){
