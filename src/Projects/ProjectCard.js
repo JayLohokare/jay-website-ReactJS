@@ -31,24 +31,111 @@ const styleCardContentHeight= {
    
 }
 
-
+const styleFABRelative ={
+  position: 'absolute',
+  display: 'inline-block',
+  right: '24px',
+  bottom: '-25px',
+}
 
 class ProjectCard extends React.Component {
+ 
+
+  getGithubURL(json){
+    var render = null;
+    for(var key in json){
+      if (key=="Github"){
+        render =
+          <li>
+            <a   href={json[key.toString()].toString()} className="  btn-floating waves-effect waves-light grey darken-3"><i className="zmdi zmdi-github"></i></a>
+          </li>
+      }
+    }
+    return render
+  }
+
+  getSlideShareURL(json){ 
+    var render = null;
+    for(var key in json){
+      if (key=="Slideshare"){
+        render =
+          <li>
+            <a   href={json[key.toString()].toString()} className="  btn-floating waves-effect waves-light blue"><i className="zmdi zmdi-slideshare"></i></a>
+          </li>
+      }
+    }
+    return render
+  }
+
+  getWebsiteURL(json){ 
+    var render = null;
+    for(var key in json){
+      if (key=="Website"){
+        render =
+          <li>
+            <a   href={json[key.toString()].toString()} className="  btn-floating waves-effect waves-light red"><i className="zmdi zmdi-globe"></i></a>
+          </li>
+      }
+    }
+    return render
+  }
+
+  renderMultipleURLs(json){
+    var render =
+      <div>
+        {this.getSlideShareURL(json)}
+        {this.getGithubURL(json)}
+        {this.getWebsiteURL(json)}
+      </div>
+    
+    return render
+  }
+
+  showProjectURL(url, url_type){
+    var render = null;
+    try{
+      if (url_type == "Github"){
+        render = <a  style={fabStyle} href={url} className="right btn-floating btn-large waves-effect waves-light pink"><i className="zmdi zmdi-github"></i></a>
+      }
+      else if(url_type== "Website"){
+        render = <a  style={fabStyle} href={url} className="right btn-floating btn-large waves-effect waves-light pink"><i className="zmdi zmdi-globe"></i></a>
+      }
+      else if (url_type== "Multiple"){
+        var json = JSON.parse(url)
+        var render = 
+          <div>
+            <div className="fixed-action-btn " style={styleFABRelative}>
+              <a className="right btn-floating btn-large  pink" >
+                <i className="large zmdi zmdi-more-vert"></i>
+              </a>
+              <ul>
+                {this.renderMultipleURLs(json)}                
+              </ul>
+            </div>
+          </div>
+      }            
+    }
+
+    catch(error){
+      console.log("SEE this" , error.toString)
+      render = null;
+    }
+
+    return render
+  }
+
   getImageURL(sec_url){
-          try{
-            var json = JSON.parse(sec_url)
-            console.log("Image is " + json.image)
-            return json.image.toString()
-          }
-          catch(error){
-            return ""
-          }
-        }
+    try{
+      var json = JSON.parse(sec_url)
+      return json.image.toString()
+    }
+    catch(error){
+      return ""
+    }
+  }
   
   showProjectCardHeader(sec_url, title){
     try{
-      
-      console.log("This is image url ", sec_url)
       var json = JSON.parse(sec_url)
       var imageURL = json.image.toString()
       var render = null;
@@ -56,9 +143,7 @@ class ProjectCard extends React.Component {
       if (imageURL !== ""){
         render = 
         <div className=" center  ">
-          <br></br>
-          <br></br>
-          <br></br>
+          <br></br><br></br><br></br>
           <img  style={imageOverlayWhite} alt={title} className=" white-text center" src={imageURL}/>
            
         </div>
@@ -68,9 +153,7 @@ class ProjectCard extends React.Component {
       else{
         render = 
         <div style={styleTextHeaderPadding}>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br></br><br></br><br></br>
           <h5 className="center white-text">{title}</h5>
           <br/>
         </div>
@@ -81,11 +164,8 @@ class ProjectCard extends React.Component {
     catch(error){
         render = 
         <div style={styleTextHeaderPadding}>
-          <br></br>
-          <br></br>
-          <br></br>
+          <br></br><br></br><br></br>
           <h5 className="center white-text">{title}</h5>
-           
         </div>
 
         return render
@@ -131,9 +211,9 @@ class ProjectCard extends React.Component {
                     
                   </div>
                   <br></br>
+                  
+                  {this.showProjectURL(this.props.project.url, this.props.project.url_type)}
 
-                  <a  style={fabStyle} href={this.props.project.url} className="right btn-floating btn-large waves-effect waves-light pink"><i className="zmdi zmdi-github"></i></a>
-                   
                 </div>
                 <br></br><br></br>
               </div>
