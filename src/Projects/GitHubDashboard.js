@@ -244,7 +244,7 @@
 
 		componentDidMount() {
 			this.setState({ isLoading: true });
-
+			
 			axios.get(EventsAPI1)
 			.then(result => {
 				this.setState({
