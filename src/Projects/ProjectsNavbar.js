@@ -12,7 +12,7 @@ class ProjectsNavbar extends Component {
 	render() {
 	  return (
 		<div>
-			<div class="navbar-fixed " style={styleNav}>
+			<div className="navbar-fixed " style={styleNav}>
 				<nav>
 					<div className="grey darken-4 nav-wrapper"></div>
 				</nav>

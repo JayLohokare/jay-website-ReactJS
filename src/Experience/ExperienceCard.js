@@ -77,25 +77,3 @@ class ExperienceCard extends React.Component {
 }
 
 export default ExperienceCard;
-
-
-
-
-
-
-                    {/* <div className="  valign-wrapper hide-on-med-and-up">
-                      <div className="col s12 ">
-                        
-                        <a href={this.props.experience.url}>
-                          <h5 className="white-text text-darken-4">{this.props.experience.company}</h5>
-                        </a>
-                        <h6 className="white-text text-darken-4">{this.props.experience.title}</h6>
-                        <p className="white-text">{this.props.experience.location}</p>
-                        <p className="white-text">{this.props.experience.year}</p>
-                        
-                        <p className="white-text">{this.props.experience.description}</p>
-                      </div>
-                    </div> */}
-
-
-

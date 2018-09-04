@@ -2,15 +2,7 @@
 	import axios from 'axios';
 	import CalendarHeatmap from 'react-calendar-heatmap';
 	import M from 'materialize-css';
-	import { setupCache } from 'axios-cache-adapter'
 
-	const cache = setupCache({
-		maxAge: 15 * 60 * 1000
-	})
-
-	const apiAxiosCache =axios.create({
-		adapter: cache.adapter
-	})
 
 	const EventsAPI1 = 'https://api.github.com/users/jayLohokare/events?page=1'
 	const EventsAPI2 = 'https://api.github.com/users/jayLohokare/events?page=2'
@@ -69,29 +61,109 @@
 		centerAlign: 'true'
 	}
 
+	const debug = true;
+
 	
 
 	class GitHubDashboard extends Component {
 
-		showGitError(){
-			M.Toast.removeAll();
-			M.toast('Some components may not load as API limit exceeded for your IP', 4000, 'rounded');
-    	}
+		getGitDataFromCache(){
+			const checkIfGitCached = localStorage.getItem('Git') 
+			const checkIfCommitsCached = localStorage.getItem('GitCommits');
+			
+			if (checkIfGitCached && checkIfCommitsCached) {
+				if(debug){
+					console.log("Got Github API data from Cache")
+				}
+				this.setState({ 
+					repos1: JSON.parse(localStorage.getItem('Git1')),
+					repos2: JSON.parse(localStorage.getItem('Git2')),
+					repos3: JSON.parse(localStorage.getItem('Git3')),
+					data1: JSON.parse(localStorage.getItem('GitCommit1')),
+					data2: JSON.parse(localStorage.getItem('GitCommit2')),
+					data3: JSON.parse(localStorage.getItem('GitCommit3')),
+					data4: JSON.parse(localStorage.getItem('GitCommit4')),
+				});
+			  
+			}
+			else{
+				M.Toast.removeAll();
+				M.toast('Github components may not load as API limit exceeded', 4000, 'rounded');
+			}
+		}
+		
+		setGitCache(type, count){
+			if(debug){
+				console.log("Got Github API data from web", type, count)
+			}
+
+			if (type == "Repos"){
+				if (count == 'one'){
+					localStorage.setItem('Git1', JSON.stringify(this.state.repos1));
+					localStorage.setItem('Git1State', true);
+				}
+				if (count == 'two'){
+					localStorage.setItem('Git2',  JSON.stringify(this.state.repos2));
+					localStorage.setItem('Git2State', true);
+				}
+				if (count == 'three'){
+					localStorage.setItem('Git3',  JSON.stringify(this.state.repos3));
+					localStorage.setItem('Git3State', true);
+				}
+	
+				if(localStorage.getItem('Git1State') && localStorage.getItem('Git2State') && localStorage.getItem('Git3State')){
+					
+					localStorage.setItem('Git', true);
+					
+				}
+			}
+
+			else if(type="Commits"){
+				if (count == 'one'){
+					localStorage.setItem('GitCommit1', JSON.stringify(this.state.data1))
+					localStorage.setItem('Git1CommitState', true);
+				}
+				if (count == 'two'){
+					localStorage.setItem('GitCommit2',  JSON.stringify(this.state.data2))
+					localStorage.setItem('Git2CommitState', true);
+				}
+				if (count == 'three'){
+					localStorage.setItem('GitCommit3',  JSON.stringify(this.state.data3))
+					localStorage.setItem('Git3CommitState', true);
+				}
+
+				if (count == 'four'){
+					localStorage.setItem('GitCommit4',  JSON.stringify(this.state.data4))
+					localStorage.setItem('Git4CommitState', true);
+				}
+	
+				if(localStorage.getItem('Git1CommitState')  && localStorage.getItem('Git4CommitState') && localStorage.getItem('Git2CommitState') && localStorage.getItem('Git3CommitState')){
+					localStorage.setItem('GitCommits', true);
+				}
+			}
+
+			const checkIfGitCached = localStorage.getItem('Git') 
+			const checkIfCommitsCached = localStorage.getItem('GitCommits');
+			if (checkIfGitCached && checkIfCommitsCached) {
+				
+			}
+		}
 		
 		getReposCount(){
-			var repo1 = this.state.repos1;
-			var repo2 = this.state.repos2;
-			var repo3 = this.state.repos3;
-			
-			return repo1.length + repo2.length + repo3.length
+			var repo1 = this.state.repos1
+			var repo2 = this.state.repos2
+			var repo3 = this.state.repos3
+
+			return repo1.length + repo2.length + repo3.length 
 		}
 
 
 		getGitCommits(){
-			var commits = this.state.data1;
-			commits = commits.concat(this.state.data2);
-			commits = commits.concat(this.state.data3);
-			commits = commits.concat(this.state.data4);
+			// console.log("GitCommit1 ", this.state.data1)
+			var commits = this.state.data1
+			commits = commits.concat( ((this.state.data2)));
+			commits = commits.concat( ((this.state.data3)));
+			commits = commits.concat( ((this.state.data4)));
 
 
 			var i = 0;
@@ -105,8 +177,14 @@
 
 			var dict = {};
 
+			commit = JSON.parse(JSON.stringify(commits))
+				
+			
 			for (var key in commits) {
-				var commit = commits[key];
+				
+				var commit = commits[key]
+				// console.log(commit)
+				
 				var created_date = commit['created_at'].substring(0, 10);
 
 				if(dict.hasOwnProperty(created_date)){
@@ -167,13 +245,15 @@
 		componentDidMount() {
 			this.setState({ isLoading: true });
 
-
-			
 			axios.get(EventsAPI1)
-			.then(result => this.setState({
+			.then(result => {
+				this.setState({
 				data1: result.data,
 				isLoading: false
-			}))
+			}),
+			this.setGitCache("Commits", 'one')
+			}
+			)
 			.catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
@@ -181,10 +261,14 @@
 			
 
 			axios.get(EventsAPI2)
-			.then(result => this.setState({
+			.then(result => {
+				this.setState({
 				data2: result.data,
 				isLoading: false
-			}))
+			}),
+			this.setGitCache("Commits", 'two')
+			}
+			)
 			.catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
@@ -192,10 +276,12 @@
 			 
 
 			axios.get(EventsAPI3)
-			.then(result => this.setState({
+			.then(result => { this.setState({
 				data3: result.data,
 				isLoading: false
-			}))
+			}),
+			this.setGitCache("Commits", 'three')
+			})
 			.catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
@@ -203,10 +289,12 @@
 			 
 
 			axios.get(EventsAPI4)
-			.then(result => this.setState({
+			.then(result => {this.setState({
 				data4: result.data,
 				isLoading: false
-			}))
+			}),
+			this.setGitCache("Commits", 'four')
+			})
 			.catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
@@ -216,74 +304,67 @@
 
 
 		    //Making 3 seperate API calls for getting 90 projects from GIT
-			apiAxiosCache({
-				url: ReposAPI1,
-				method: 'get'
-			  })
-		    .then(result => this.setState({
+			axios.get(ReposAPI1)
+		    .then(result => {
+				this.setState({
 		    	repos1: result.data,
 		    	isLoading: false
-		    }),
-			cache.store.length().then(length => {
-				console.log('Cache store length:', length)
-			  })
-			)
-		    .catch(error => this.setState({
-		    	errorGit : error,
-		    	isLoading: false
-			}));
+			}),
+			this.setGitCache("Repos", 'one')})
+			.catch(error => {
+				this.setState({
+					errorGit : error,
+					isLoading: false
+				})
+			}	
+			);
 
 
-		    apiAxiosCache({
-				url: ReposAPI2,
-				method: 'get'
-			  })
-			.then(result => 
+		    axios.get(ReposAPI2)
+			.then(result => {
 				this.setState({
 					repos2: result.data,
 					isLoading: false
 				}),
-				cache.store.length().then(length => {
-					console.log('Cache store length:', length)
-				  })
+				this.setGitCache("Repos", 'two')
+			}
+				
 			)
-		    .catch(error => this.setState({
-		    	errorGit : error,
-		    	isLoading: false
-		    }));
+			.catch(error => 
+				this.setState({
+					errorGit : error,
+					isLoading: false
+				}),
+			);
 
 
-		    apiAxiosCache({
-				url: ReposAPI3,
-				method: 'get'
-			  })
-		    .then(result => this.setState({
-		    	repos3: result.data,
-		    	isLoading: false
-		    }),
-			cache.store.length().then(length => {
-				console.log('Cache store length:', length)
-			  })
+		    axios.get(ReposAPI3)
+			.then(result => {
+				this.setState({
+					repos3: result.data,
+					isLoading: false
+				}),
+				this.setGitCache("Repos", 'three')
+			}
 			)
-		    .catch(error => this.setState({
-		    	errorGit : error,
-		    	isLoading: false
-		    }));
+			.catch(error => {
+				
+				this.getGitDataFromCache(),
+				this.setState({
+					errorGit : error,
+					isLoading: false
+				})
+			}
+			);
+
+			// this.getGitDataFromCache();
 
 		}
 
 
 
 		render() {
-			const {   errorGit} = this.state;
-
-			if (errorGit) {
-				console.log("GitHub API error.");
-				this.showGitError();
-			}
-
-
-			 
+			
 			return (
 
 				<div className="row">
