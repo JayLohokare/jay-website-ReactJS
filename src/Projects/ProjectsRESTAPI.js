@@ -13,7 +13,7 @@ class ProjectRESTAPI extends Component {
 
   showGitError(){
    	
-      M.toast('Some components may not load as API limit exceeded', 4000, 'rounded');
+      M.toast('Some components may not load due to API errors', 4000, 'rounded');
     }
 
   log(){
@@ -51,7 +51,7 @@ class ProjectRESTAPI extends Component {
 
     
     if (error) {
-      console.log("Projects API error.");
+      console.log("Projects API error.", error);
       this.showGitError()
     }
 

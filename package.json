@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "axios-cache-adapter": "^2.1.1",
+    "axios-cache-plugin": "^0.1.0",
     "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-calendar-heatmap": "^1.6.3",

@@ -2,14 +2,15 @@
 	import axios from 'axios';
 	import CalendarHeatmap from 'react-calendar-heatmap';
 	import M from 'materialize-css';
-	import { setup } from 'axios-cache-adapter';
+	import { setupCache } from 'axios-cache-adapter'
 
-	const apiAxiosCache = setup({
-		cache: {
-		  maxAge: 15 * 60 * 1000
-		  //Cache data from API for 15 mins!
-		}
-	  })
+	const cache = setupCache({
+		maxAge: 15 * 60 * 1000
+	})
+
+	const apiAxiosCache =axios.create({
+		adapter: cache.adapter
+	})
 
 	const EventsAPI1 = 'https://api.github.com/users/jayLohokare/events?page=1'
 	const EventsAPI2 = 'https://api.github.com/users/jayLohokare/events?page=2'
@@ -75,7 +76,7 @@
 		showGitError(){
 			M.Toast.removeAll();
 			M.toast('Some components may not load as API limit exceeded for your IP', 4000, 'rounded');
-    }
+    	}
 		
 		getReposCount(){
 			var repo1 = this.state.repos1;
@@ -222,21 +223,30 @@
 		    .then(result => this.setState({
 		    	repos1: result.data,
 		    	isLoading: false
-		    }))
+		    }),
+			cache.store.length().then(length => {
+				console.log('Cache store length:', length)
+			  })
+			)
 		    .catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
-		    }));
+			}));
 
 
 		    apiAxiosCache({
-				url: ReposAPI1,
+				url: ReposAPI2,
 				method: 'get'
 			  })
-		    .then(result => this.setState({
-		    	repos2: result.data,
-		    	isLoading: false
-		    }))
+			.then(result => 
+				this.setState({
+					repos2: result.data,
+					isLoading: false
+				}),
+				cache.store.length().then(length => {
+					console.log('Cache store length:', length)
+				  })
+			)
 		    .catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
@@ -244,13 +254,17 @@
 
 
 		    apiAxiosCache({
-				url: ReposAPI1,
+				url: ReposAPI3,
 				method: 'get'
 			  })
 		    .then(result => this.setState({
 		    	repos3: result.data,
 		    	isLoading: false
-		    }))
+		    }),
+			cache.store.length().then(length => {
+				console.log('Cache store length:', length)
+			  })
+			)
 		    .catch(error => this.setState({
 		    	errorGit : error,
 		    	isLoading: false
