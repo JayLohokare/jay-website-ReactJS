@@ -2,7 +2,7 @@ import React from 'react';
 
 const styleImage300px = {
   height: '100px',
-  filter: 'brightness(100)',
+  filter: 'brightness(10000)',
 }
 
 const cardBackground = {
