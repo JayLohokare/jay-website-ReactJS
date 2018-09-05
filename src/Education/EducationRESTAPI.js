@@ -9,13 +9,9 @@ const educationAPI = 'http://18.219.99.237:8000/education/'
 class EducationRESTAPI extends Component {
 
   showGitError(){
-      M.toast('Something went wrong trying to fetch education :(', 4000, 'rounded');
+      M.toast('Something went wrong trying to fetch education', 4000, 'rounded');
     }
 
-  log(){
-    console.log("This is the data" + this.state.data)
-  }
-  
   constructor(props) {
     super(props);
     this.state = {

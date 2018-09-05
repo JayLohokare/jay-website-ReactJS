@@ -8,13 +8,9 @@ const experienceAPI = 'http://18.219.99.237:8000/experience/'
 
 class ExperienceRESTAPI extends Component {
 
-  showGitError(){
-      M.toast('Something went wrong trying to fetch experience :(', 4000, 'rounded');
+  showError(){
+      M.toast('Something went wrong trying to fetch experience', 4000, 'rounded');
     }
-
-  log(){
-    console.log("This is the data" + this.state.data)
-  }
 
   constructor(props) {
     super(props);
@@ -54,7 +50,7 @@ class ExperienceRESTAPI extends Component {
     
     if (error) {
       console.log("Experience API error.");
-      this.showGitError()
+      this.showError()
     }
 
     if (isLoading) {

@@ -2,14 +2,31 @@ import React from 'react';
 
 const styleTopPadding = {
   top:'50px',
+  marginBottom: '200px'
 }
 
 const styleContactModal = {
   top:'-25px', 
   right:'15px'
 }
+const marginBottom150px ={
+  marginBottom : '150px'
+}
+const styleBuiltWith= {
+  position: 'absolute',
+  bottom: '0px',
+  width: '100%'
+}
 
+const heartStyle ={
+  height: '15px'
+}
 
+const madeUsingStyle = {
+  marginTop: '-20px',
+  height: '45px',
+  padding: '5px'
+}
 
 class HomeContent extends React.Component {
     render() {
@@ -132,7 +149,7 @@ class HomeContent extends React.Component {
             </div>
 
             <div  className="section" >
-              <div className="row valign-wrapper">
+              <div className="row valign-wrapper" style={marginBottom150px}>
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white blue-grey text-darken-3" >
                     <div className="white card-content light-blue-text text-darken-3">
@@ -165,6 +182,15 @@ class HomeContent extends React.Component {
                     <br/>
                   </div>
                 </div>
+              </div>
+              <div style={styleBuiltWith}>
+                <p className="white-text center" >
+                Built with <img src="images/heart.png" style={heartStyle}/> using</p>
+                <p className="white-text center">
+                  <img src="images/react.png" style={madeUsingStyle}/>   
+                  <img src="images/django.png" style={madeUsingStyle}/> 
+                  <img src="images/materialize.png" style={madeUsingStyle}/>
+                </p>
               </div>
             </div>
           </div>

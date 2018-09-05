@@ -5,6 +5,7 @@ import Projects from './Projects';
 import Experience from './Experience';
 import Research from './Research';
 import Education from './Education';
+import Updates from './Updates';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route exact path="/experience" component={Experience}/>
         <Route exact path="/research" component={Research}/>
         <Route exact path="/education" component={Education}/>
+        <Route exact path="/updates" component={Updates}/>
 	    </Switch>
     );
   }

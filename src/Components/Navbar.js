@@ -13,9 +13,15 @@ const styleMenuButton = {
 
 const styleZindez = {
   zIndex: '10000',
+  marginBottom: '300px',
+  paddingBottom: '300px'
 }
 
- 
+const paddingB ={
+  marginBottom: '20px'
+}
+
+
 
 
 class Navbar extends Component {
@@ -52,6 +58,9 @@ class Navbar extends Component {
 
             <li><a className = "waves-effect" href="/">Home</a></li>
             <li><a className = "waves-effect" href="blog/index.html">Blog</a></li>
+
+            <li><div className="divider"></div></li>
+
             <li><a className = "waves-effect" href="/experience">Experience</a></li>
             <li><a className = "waves-effect" href="/education">Education</a></li>
 
@@ -60,12 +69,11 @@ class Navbar extends Component {
 
             <li><a className = "waves-effect" target="_blank" href="/docs/CV.pdf">Resume</a></li>
             <li><a className = "waves-effect" href="/projects">Projects</a></li>
-            <li><a className = "waves-effect" href="#!">Publications</a></li>
-            <li><a className = "waves-effect" href="#!">Awards</a></li>
+            <li><a className = "waves-effect" href="/research">Research</a></li>
 
-            <li><a className = "waves-effect" href="#!">Social Media</a></li>
-
-            <br/>
+            
+            <li><div className="divider"></div></li>
+            <li style={paddingB}><a className = "waves-effect" href="/updates">Updates</a></li>
 
           </ul>
            

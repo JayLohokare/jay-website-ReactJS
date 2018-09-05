@@ -402,6 +402,7 @@
 										<p className="white-text center">
 										{this.state.commitsCount} commits in past 90 days
 										</p>
+									<p className="white-text">Visit my Github profile for projects</p>
 									</div>
 								</div>
 							</div>
@@ -444,6 +445,7 @@
 									<p className="white-text center">
 										{this.state.commitsCount} Commits in past 90 days
 									</p>
+									<p className="white-text">Visit my Github profile for more projects</p>
 								</div>	 
 
 							</div>
