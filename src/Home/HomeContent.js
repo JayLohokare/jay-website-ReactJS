@@ -65,7 +65,7 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text red-text text-darken-2">Hello!</h4>
+                      <h4 className="center flow-text red-text  ">Hello!</h4>
                       
                       <p className="black-text">
                           I'm Jay Lohokare, a Graduate student pursuing Masters in Computer Science at Stony Brook University.
@@ -100,7 +100,7 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text red-text text-darken-2">Research background</h4>
+                      <h4 className="center flow-text red-text ">Research background</h4>
                      
                       <p className="black-text">
                           I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
@@ -111,6 +111,11 @@ class HomeContent extends React.Component {
                       I led the formation of IoT lab at College of Engineering Pune, and worked with Professor Rahul Adhao for creating highly scalable IoT solutions and platform.
                       </p>
                       <br/>
+
+                      <div className="center">
+                      <a href="/research" className="btn waves-effect light-blue darken-3 center waves-light  ">Publications</a>
+                      </div>
+                      
 
                       {/* <div className="center">
                         <a className="center  light-blue darken-1 white-text waves-effect waves-light btn" href="https://scholar.google.com/citations?hl=en&user=mV0ZrH4AAAAJ">
@@ -130,7 +135,7 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white blue-grey text-darken-3" >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text red-text text-darken-2">Startup/Industry experience</h4>
+                      <h4 className="center flow-text red-text  ">Startup/Industry experience</h4>
                        
                       <p className="black-text">
                         I formed and led a tech-startup <a href="http://www.skylinelabs.in">'Skyline Labs'</a> during my undergraduate years. At its peak, we were a team of 15 members working with various startups, companies and institutes to create smart digital solutions and products. I have worked with several other startups helping them with technology implementation and business strategy.
@@ -187,9 +192,11 @@ class HomeContent extends React.Component {
                 <p className="white-text center" >
                 Built with <img src="images/heart.png" style={heartStyle}/> using</p>
                 <p className="white-text center">
-                  <img src="images/react.png" style={madeUsingStyle}/>   
-                  <img src="images/django.png" style={madeUsingStyle}/> 
-                  <img src="images/materialize.png" style={madeUsingStyle}/>
+                  <a  href="https://reactjs.org/" target="_blank"><img src="images/react.png" style={madeUsingStyle}/></a>
+                  <a href="http://www.django-rest-framework.org/" target="_blank"><img  src="images/django.png" style={madeUsingStyle}/> </a>
+                  <a  href="https://materializecss.com/" target="_blank"><img src="images/materialize.png" style={madeUsingStyle}/></a>
+                  <a href="https://www.mongodb.com/" target="_blank"><img  src="images/mongo.png" style={madeUsingStyle}/></a>
+                
                 </p>
               </div>
             </div>
