@@ -1,7 +1,7 @@
 import React from 'react';
 
 const cardBackground = {
-  backgroundColor: 'rgb(1,87,155, 0.5)',
+  // backgroundColor: 'rgb(1,87,155, 0.5)',
   marginBottom: '-15px',
   padding: '20px',
   height: '200px',
@@ -24,7 +24,7 @@ const fabStyle = {
 }
 
 const styleSmallFABPad = {
-  backgroundColor: 'rgb(1,87,155, 0.5)',
+  // backgroundColor: 'rgb(1,87,155, 0.5)',
   marginBottom: '-10px',
   height: '260px',
 }
@@ -51,19 +51,19 @@ class UpdateCard extends React.Component {
   render() {
     return (
       <div >
-        <div className="  hide-on-med-and-down white-text">
-          <div className="scrollbar" id="style-1" style={cardBackground}>
-            <h5 className="">{this.props.update.competition}</h5>
+        <div className="white  hide-on-med-and-down white-text">
+          <div className="scrollbar black-text" id="style-1" style={cardBackground}>
+            <h5 className="light-blue-text text-darken-4">{this.props.update.competition}</h5>
             <p>{this.props.update.title}</p>
             <p>{this.props.update.description}</p>
           </div>
           {this.renderLinks(this.props.update.url)}   
         </div>
 
-        <div className="hide-on-large-only white-text">
+        <div className="white hide-on-large-only white-text">
           <div style={styleSmallFABPad}>
-          <div className="scrollbar" id="style-1" style={cardBackgroundSmall}>
-            <h5 className="">{this.props.update.competition}</h5>
+          <div className="scrollbar black-text" id="style-1" style={cardBackgroundSmall}>
+            <h5 className="light-blue-text text-darken-4">{this.props.update.competition}</h5>
               <p>{this.props.update.title}</p>
               <p>{this.props.update.description}</p>
             </div>

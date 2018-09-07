@@ -5,7 +5,7 @@ const styleImage300px = {
   filter: 'brightness(10000)',
 }
 const fabStyle = {
-    bottom: '20px',
+    bottom: '10px',
     right: '25px'
     
   }
@@ -71,7 +71,7 @@ class ExperienceCard extends React.Component {
                         } 
                         </div>
                     </div>
-                    <a  style={fabStyle} target="_blank" href={this.props.research.url} className="right btn-floating btn-large waves-effect waves-light pink"><i className="zmdi zmdi-download"></i></a>
+                    <a  style={fabStyle} target="_blank" href={this.props.research.url} className="right btn-floating waves-effect waves-light pink"><i className="zmdi zmdi-download"></i></a>
                 </div>
 
                 <div className="hide-on-large-only">
@@ -89,7 +89,7 @@ class ExperienceCard extends React.Component {
                         } 
                         </div>
                     </div>
-                    <a  style={fabStyle} target="_blank" href={this.props.research.url} className="right btn-floating btn-large waves-effect waves-light pink"><i className="zmdi zmdi-download"></i></a>
+                    <a  style={fabStyle} target="_blank" href={this.props.research.url} className="right btn-floating waves-effect waves-light pink"><i className="zmdi zmdi-download"></i></a>
                 </div>
 
             </div>
