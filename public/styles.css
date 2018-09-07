@@ -9,4 +9,22 @@
 .react-calendar-heatmap-month-label  {font-size: 8px; color:#ffffff; color_name:#ffffff; padding: 10px;  left: 60%; width:100%; float:left;}
 
 
+.scrollbar {
+overflow-y: auto;
+}
+
+#style-1::-webkit-scrollbar,
+#style-2::-webkit-scrollbar {
+width: 8px;
+margin-top: 7px; 
+}
+
+#style-1::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background-color: rgba(154, 157, 160, 0.3);
+}
+
+#style-1::-webkit-scrollbar-track { 
+border-radius: 10px;
+}
 

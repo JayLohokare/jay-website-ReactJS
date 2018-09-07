@@ -38,7 +38,7 @@ class HomeContent extends React.Component {
 
               <div className="row valign-wrapper">
                 <div className="col s12  offset-m3 offset-l4 l4 m6 valign">
-                  <div  className="card white blue-grey text-darken-3"  >
+                  <div  className="card white blue-grey text-darken-3 "  >
                     <div className="white card-content light-blue-text text-darken-3">
                       <div className="container " >
                         <div className="row" >
@@ -63,7 +63,7 @@ class HomeContent extends React.Component {
             <div  className="section">
               <div className="row valign-wrapper">
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
-                  <div className="card white" >
+                  <div className="card white scrollbar" id="style-1"  >
                     <div className="white card-content light-blue-text text-darken-3">
                       <h4 className="center flow-text red-text  ">Hello!</h4>
                       
@@ -98,7 +98,7 @@ class HomeContent extends React.Component {
             <div  className="section">
               <div className="row valign-wrapper">
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
-                  <div className="card white" >
+                  <div className="card white scrollbar" id="style-1"  >
                     <div className="white card-content light-blue-text text-darken-3">
                       <h4 className="center flow-text red-text ">Research background</h4>
                      
@@ -133,7 +133,7 @@ class HomeContent extends React.Component {
             <div  className="section">
               <div className="row valign-wrapper">
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
-                  <div className="card white blue-grey text-darken-3" >
+                  <div className="card white blue-grey text-darken-3 scrollbar" id="style-1"  >
                     <div className="white card-content light-blue-text text-darken-3">
                       <h4 className="center flow-text red-text  ">Startup/Industry experience</h4>
                        
@@ -156,7 +156,7 @@ class HomeContent extends React.Component {
             <div  className="section" >
               <div className="row valign-wrapper" style={marginBottom150px}>
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
-                  <div className="card white blue-grey text-darken-3" >
+                  <div className="card white blue-grey text-darken-3 scrollbar" id="style-1"  >
                     <div className="white card-content light-blue-text text-darken-3">
                       
                       <p className="black-text">

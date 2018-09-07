@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const styleCardContentHeight= {
-  height: '220px',
+  height: '200px',
   overflow: 'auto',
   paddingBottom: '20px'
 }
@@ -85,16 +85,13 @@ class EducationCard extends React.Component {
         return (
           <div >
             <div className="card white text-darken-3 hide-on-small-only" >
-              <div className="white card-content " style={styleCardContentHeight}>
+              <div className="white card-content scrollbar" id="style-1"  style={styleCardContentHeight}>
 
                 <div className="hide-on-small-only">
                       <div className="right">
                         <img src={this.props.education.image_url} alt={this.props.education.image_url} style={styleImage300px}/>
                       </div>
-                  
-                     
                       {this.checkEucationType(this.props.education.title, this.props.education.url, this.props.education.location,this.props.education.year, this.props.education.degree)}
-                    
                 </div>
             </div>
           </div>
@@ -102,13 +99,11 @@ class EducationCard extends React.Component {
 
 
           <div className="card white text-darken-3 hide-on-med-and-up" >
-              <div className="white card-content " style={styleCardContentHeight}>
+              <div className="white card-content scrollbar" id="style-1"  style={styleCardContentHeight}>
 
                 <div className="  valign-wrapper hide-on-med-and-up">
                   <div className="col s12 ">
-
                    {this.checkEucationType(this.props.education.title, this.props.education.url, this.props.education.location,this.props.education.year, this.props.education.degree)}
-                    
                   </div>
                 </div>
             </div>

@@ -13,8 +13,8 @@ const styleMenuButton = {
 
 const styleZindez = {
   zIndex: '10000',
-  marginBottom: '300px',
-  paddingBottom: '300px'
+  marginBottom: '150px',
+  paddingBottom: '150px'
 }
 
 const paddingB ={
@@ -34,7 +34,7 @@ class Navbar extends Component {
       this.state.navClass = "side-nav fixed";
     }
     else{
-      this.state.navClass = "side-nav ";
+      this.state.navClass = "side-nav scrollbar";
     }
   }
 
@@ -43,45 +43,45 @@ class Navbar extends Component {
     return (
       <div>
    
-          <ul id="slide-out" className={this.state.navClass}  style={styleZindez}>
-            <li>
-              <div className="user-view grey darken-4">
-                <div className="background">
-                  <img src="images/office.jpg" alt="backgroundImage"></img>
-                </div>
-
-                <img className="circle" src="images/jay.jpg" alt="jayLohokare"></img>
-                <span className="white-text name">Jay Lohokare</span>
-                <a href="mailto:jaylohokare@gmail.com"><span className="white-text email">jaylohokare@gmail.com</span></a>
+        <ul id="slide-out" className={this.state.navClass}  style={styleZindez}>
+          <li>
+            <div className="user-view grey darken-4">
+              <div className="background">
+                <img src="images/office.jpg" alt="backgroundImage"></img>
               </div>
-            </li>
 
-            <li><a className = "waves-effect" href="/">Home</a></li>
-            <li><a className = "waves-effect" href="blog/index.html">Blog</a></li>
+              <img className="circle" src="images/jay.jpg" alt="jayLohokare"></img>
+              <span className="white-text name">Jay Lohokare</span>
+              <a href="mailto:jaylohokare@gmail.com"><span className="white-text email">jaylohokare@gmail.com</span></a>
+            </div>
+          </li>
 
-            <li><div className="divider"></div></li>
+          <li><a className = "waves-effect" href="/">Home</a></li>
+          <li><a className = "waves-effect" href="blog/index.html">Blog</a></li>
 
-            <li><a className = "waves-effect" href="/experience">Experience</a></li>
-            <li><a className = "waves-effect" href="/education">Education</a></li>
+          <li><div className="divider"></div></li>
 
-
-            <li><div className="divider"></div></li>
-
-            <li><a className = "waves-effect" target="_blank" href="/docs/CV.pdf">Resume</a></li>
-            <li><a className = "waves-effect" href="/projects">Projects</a></li>
-            <li><a className = "waves-effect" href="/research">Research</a></li>
-
-            
-            <li><div className="divider"></div></li>
-            <li style={paddingB}><a className = "waves-effect" href="/updates">Updates</a></li>
-
-          </ul>
-           
+          <li><a className = "waves-effect" href="/experience">Experience</a></li>
+          <li><a className = "waves-effect" href="/education">Education</a></li>
 
 
-          <a href="#" data-activates="slide-out" className="button-collapse" style={styleMenuButton}>
-            <i className=" zmdi zmdi-menu zmdi-hc-3x animated infinite wobble"></i>
-          </a>
+          <li><div className="divider"></div></li>
+
+          <li><a className = "waves-effect" target="_blank" href="/docs/CV.pdf">Resume</a></li>
+          <li><a className = "waves-effect" href="/projects">Projects</a></li>
+          <li><a className = "waves-effect" href="/research">Research</a></li>
+
+          
+          <li><div className="divider"></div></li>
+          <li style={paddingB}><a className = "waves-effect" href="/updates">Updates</a></li>
+
+        </ul>
+          
+
+
+        <a href="#" data-activates="slide-out" className="button-collapse" style={styleMenuButton}>
+          <i className=" zmdi zmdi-menu zmdi-hc-3x animated infinite wobble"></i>
+        </a>
           
          
 

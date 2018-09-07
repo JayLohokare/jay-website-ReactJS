@@ -61,7 +61,7 @@ class ExperienceCard extends React.Component {
                   </div>
 
                 <div className="card text-darken-3" >
-                  <div className=" card-content " style={styleCardContentHeight}>
+                  <div className=" card-content scrollbar" id="style-1" style={styleCardContentHeight}>
                     <div className=" ">
                           <p className="black-text">{this.props.experience.description}</p>
                     </div>

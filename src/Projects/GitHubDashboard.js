@@ -16,7 +16,7 @@
 	const footerStyle = {
 		display: 'flex',
 		minHeight: '20%',
-		maxHeight: '60%',
+		maxHeight: '100%',
 		flexDirection: 'column',
 		flex:  'auto',
 		padding: '20px',
@@ -392,7 +392,7 @@
 								</div>
 								
 								<div className="row center ">
-									<div className="col offset-l4 l4  ">
+									<div className="col offset-l4 l4 center ">
 										<div className="center center-align">
 											<img href="http://www.github.com/JayLohokare" alt="Github" className="" src="images/Git.png" style={gitImageStyle}/>
 										</div>
@@ -402,7 +402,7 @@
 										<p className="white-text center">
 										{this.state.commitsCount} commits in past 90 days
 										</p>
-									<p className="white-text">Visit my Github profile for projects</p>
+									<p className="white-text center">Visit my Github profile for projects</p>
 									</div>
 								</div>
 							</div>
@@ -435,7 +435,7 @@
 									</div>
 								</div>
 
-								<div className="col  s12 m6 offset-m3">
+								<div className="col  s12 m6 offset-m3 center">
 									<div className="center center-align">
 										<img href="http://www.github.com/JayLohokare" alt="Github" className="" src="images/Git.png" style={gitImageStyle}/>
 									</div>
@@ -445,7 +445,7 @@
 									<p className="white-text center">
 										{this.state.commitsCount} Commits in past 90 days
 									</p>
-									<p className="white-text">Visit my Github profile for more projects</p>
+									<p className="white-text center">Visit my Github profile for more projects</p>
 								</div>	 
 
 							</div>

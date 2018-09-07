@@ -1,46 +1,80 @@
 import React from 'react';
 
-const newLineStyle = {
-  padding: '6px',
-}
-const fabStyle = {
-  bottom: '25px',
-  right: '25px' 
-}
-const styleHeader ={ 
-  marginBottom: '-7px',
-  zIndex: '99999',
-  paddingBottom: '30px',
+const cardBackground = {
   backgroundColor: 'rgb(1,87,155, 0.5)',
-  height: '200px'
-}
-const imageOverlayWhite ={
-  filter: 'brightness(100)',
-  width: '40%',
-}
-const styleTextHeaderPadding = {
-}
-const styleCardContentHeight= {
-  height: '450px',
-  paddingBottom: '80px',
+  marginBottom: '-15px',
+  padding: '20px',
+  height: '200px',
   overflow: 'auto',
+  position: 'relative'
 }
-const styleFABRelative ={
-  position: 'absolute',
-  display: 'inline-block',
-  right: '24px',
-  bottom: '-25px',
+
+const cardBackgroundSmall = {
+  paddingLeft: '20px',
+  paddingRight: '10px',
+  paddingTop: '10px',
+  height: '230px',
+  overflow: 'auto',
+  position: 'relative',
+}
+
+const fabStyle = {
+  bottom: '10px',
+  right: '20px'
+}
+
+const styleSmallFABPad = {
+  backgroundColor: 'rgb(1,87,155, 0.5)',
+  marginBottom: '-10px',
+  height: '260px',
 }
 
 class UpdateCard extends React.Component {
 
-    render() {
-        return (
-            <div >
-<br/>
-            </div>
-        );
+  renderLinks(url){
+    var render = null
+
+    if(url != "None"){
+      var json = JSON.parse(url)
+      for (var key in json){
+        if(key=="facebook"){
+          var url = json[key.toString()].toString()
+          console.log(url)
+          render = <a style={fabStyle} href={url} target="_blank" className="right btn-floating   waves-effect waves-light pink"><i className="zmdi zmdi-facebook"></i></a>
+        }
+      }
     }
+  
+    return render
+  }
+
+  render() {
+    return (
+      <div >
+        <div className="  hide-on-med-and-down white-text">
+          <div className="scrollbar" id="style-1" style={cardBackground}>
+            <h5 className="">{this.props.update.competition}</h5>
+            <p>{this.props.update.title}</p>
+            <p>{this.props.update.description}</p>
+          </div>
+          {this.renderLinks(this.props.update.url)}   
+        </div>
+
+        <div className="hide-on-large-only white-text">
+          <div style={styleSmallFABPad}>
+          <div className="scrollbar" id="style-1" style={cardBackgroundSmall}>
+            <h5 className="">{this.props.update.competition}</h5>
+              <p>{this.props.update.title}</p>
+              <p>{this.props.update.description}</p>
+            </div>
+          </div>
+          
+          {this.renderLinks(this.props.update.url)}
+        </div>
+      
+      </div>
+    );
+  }
 }
 
 export default UpdateCard;

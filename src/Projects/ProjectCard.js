@@ -3,11 +3,12 @@ import React from 'react';
 const newLineStyle = {
   padding: '6px',
 }
+
 const fabStyle = {
   bottom: '25px',
   right: '25px'
-  
 }
+
 const styleHeader ={ 
   marginBottom: '-7px',
   zIndex: '99999',
@@ -15,6 +16,7 @@ const styleHeader ={
   backgroundColor: 'rgb(1,87,155, 0.5)',
   height: '200px'
 }
+
 const imageOverlayWhite ={
   filter: 'brightness(100)',
   width: '40%',
@@ -181,14 +183,13 @@ class ProjectCard extends React.Component {
                 </div>
 
                 <div className="card white blue-grey text-darken-3">
-                  <div className="white card-content light-blue-text text-darken-3" style={styleCardContentHeight}>
+                  <div className="white card-content light-blue-text text-darken-3 scrollbar" id="style-1"  style={styleCardContentHeight}>
                   
-                     
                     <div>
                     {
                       
                       this.props.project.tags.split(',').map((item)=>
-                        <div className="chip  center text-darken-2">
+                        <div className="chip center text-darken-2">
                             {item}
                         </div>
                       )

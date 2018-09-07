@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Navbar from './Components/Navbar';
 import Background from './Components/Background';
-import ResearchNavbar from './Research/ResearchNavbar';
 
+import ResearchNavbar from './Research/ResearchNavbar';
 import ResearchRESTAPI from './Research/ResearchRESTAPI';
 
 const stylePadding = {

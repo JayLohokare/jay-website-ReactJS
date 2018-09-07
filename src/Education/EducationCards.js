@@ -13,7 +13,7 @@ const notFullScreenHeight = {
 }
 
 const styleCardSize={
-    height: '240px',
+    height: '220px',
   }
 
 
