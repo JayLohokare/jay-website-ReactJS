@@ -12,3 +12,11 @@ To run the website server:
 ```
 npm start
 ```
+
+Production server:
+```
+npm run build
+sudo apt install xsel
+sudo npm install -g serve
+serve -s build
+```
