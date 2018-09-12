@@ -20,3 +20,5 @@ sudo apt install xsel
 sudo npm install -g serve
 serve -s build
 ```
+
+Website uses AWS S3, AWS 53, AWS CloudFront 
