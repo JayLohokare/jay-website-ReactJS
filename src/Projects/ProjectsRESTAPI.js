@@ -9,6 +9,13 @@ import GitHubDashboard from './GitHubDashboard';
 
 const projectsAPI = 'http://18.219.99.237:8000/projects/'
 
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+  }
+}
+
 class ProjectRESTAPI extends Component {
 
   showGitError(){
@@ -33,7 +40,7 @@ class ProjectRESTAPI extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    axios.get(projectsAPI)
+    axios.get(projectsAPI, null, axiosConfig)
       .then(result => this.setState({
         data: result.data,
         isLoading: false

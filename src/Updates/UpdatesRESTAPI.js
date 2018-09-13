@@ -7,6 +7,13 @@ import M from 'materialize-css';
 
 const updatesAPI = 'http://18.219.99.237:8000/awards/'
 
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+  }
+}
+
 class UpdatesRESTAPI extends Component {
 
   showGitError(){
@@ -25,7 +32,7 @@ class UpdatesRESTAPI extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    axios.get(updatesAPI)
+    axios.get(updatesAPI, null, axiosConfig)
       .then(result => this.setState({
         data: result.data,
         isLoading: false

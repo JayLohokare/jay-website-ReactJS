@@ -6,6 +6,13 @@ import M from 'materialize-css';
 
 const educationAPI = 'http://18.219.99.237:8000/education/'
 
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+  }
+}
+
 class EducationRESTAPI extends Component {
 
   showGitError(){
@@ -23,7 +30,7 @@ class EducationRESTAPI extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    axios.get(educationAPI)
+    axios.get(educationAPI, null, axiosConfig)
       .then(result => this.setState({
         data: result.data,
         isLoading: false

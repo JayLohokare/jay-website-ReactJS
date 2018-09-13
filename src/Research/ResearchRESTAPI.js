@@ -6,6 +6,13 @@ import ResearchCards from './ResearchCards';
 
 const researchAPI = 'http://18.219.99.237:8000/research/'
 
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+  }
+}
+
 class ResearchRESTAPI extends Component {
 
   showGitshowErrorError(){
@@ -23,7 +30,7 @@ class ResearchRESTAPI extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    axios.get(researchAPI)
+    axios.get(researchAPI, null, axiosConfig)
       .then(result => this.setState({
         data: result.data,
         isLoading: false

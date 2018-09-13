@@ -6,6 +6,13 @@ import M from 'materialize-css';
 
 const experienceAPI = 'http://18.219.99.237:8000/experience/'
 
+let axiosConfig = {
+  headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+  }
+}
+
 class ExperienceRESTAPI extends Component {
 
   showError(){
@@ -25,7 +32,7 @@ class ExperienceRESTAPI extends Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    axios.get(experienceAPI)
+    axios.get(experienceAPI, null, axiosConfig)
       .then(result => this.setState({
         data: result.data,
         isLoading: false
