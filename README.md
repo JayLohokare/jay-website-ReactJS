@@ -18,6 +18,8 @@ Build the app:
 npm run build
 ```
 
+The contact form is hosted on AWS using API gateway, AWS Lambda, AWS SES
+
 Hsot the website using AWS S3, AWS 53, AWS CloudFront 
 ```
 1. Create new S3 bucket with domain name as bucket name (jaylohokare.com). Set Static website hosting True
