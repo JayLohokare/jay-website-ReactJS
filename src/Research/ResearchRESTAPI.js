@@ -4,7 +4,7 @@ import Loader from '../Components/Loader';
 import M from 'materialize-css';
 import ResearchCards from './ResearchCards';
 
-const researchAPI = 'https://18.219.99.237:8000/research/'
+const researchAPI = 'https://jaylohokare.ml:8000/research/'
 
 let axiosConfig = {
   headers: {

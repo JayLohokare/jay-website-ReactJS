@@ -4,7 +4,7 @@ import ExperienceCards from './ExperienceCards';
 import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
-const experienceAPI = 'https://18.219.99.237:8000/experience/'
+const experienceAPI = 'https://jaylohokare.ml:8000/experience/'
 
 let axiosConfig = {
   headers: {

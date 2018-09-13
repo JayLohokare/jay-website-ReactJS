@@ -5,7 +5,7 @@ import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
 
-const updatesAPI = 'https://18.219.99.237:8000/awards/'
+const updatesAPI = 'https://jaylohokare.ml:8000/awards/'
 
 let axiosConfig = {
   headers: {

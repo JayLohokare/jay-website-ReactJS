@@ -33,3 +33,8 @@ To point your domain to this S3 bucket:
 ```
 
 Alternatively, use <b>Netlify service</b> (Free hosting based on Github). The services is easy to use, takes code from github and automatically deploys it to the domain with free SSL (HTTPS)
+
+Get Free Domains at 
+https://freenom.com/
+
+jaylohokare.com API is available at https://jaylohokare.ml:8000
