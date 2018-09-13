@@ -11,12 +11,25 @@
     "react-calendar-heatmap": "^1.6.3",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^1.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "ReactJS code for jaylohokare.com",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayLohokare/jay-website-ReactJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayLohokare/jay-website-ReactJS/issues"
+  },
+  "homepage": "https://github.com/JayLohokare/jay-website-ReactJS#readme"
 }
