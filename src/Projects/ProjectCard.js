@@ -13,6 +13,7 @@ const styleHeader ={
   marginBottom: '-7px',
   zIndex: '99999',
   paddingBottom: '30px',
+  background:'rgb(1,87,155)',
   backgroundColor: 'rgb(1,87,155, 0.5)',
   height: '200px'
 }

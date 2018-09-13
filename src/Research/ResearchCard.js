@@ -11,6 +11,8 @@ const fabStyle = {
   }
 
 const cardBackground = {
+    
+  background:'rgb(1,87,155)',
   backgroundColor: 'rgb(1,87,155, 0.5)',
   marginBottom: '-15px',
   padding: '20px',
@@ -20,6 +22,8 @@ const cardBackground = {
 }
 
 const cardBackgroundSmall = {
+    
+    background:'rgb(1,87,155)',
     backgroundColor: 'rgb(1,87,155, 0.5)',
     marginBottom: '-15px',
     padding: '20px',

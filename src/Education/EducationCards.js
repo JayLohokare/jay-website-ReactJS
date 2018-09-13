@@ -17,18 +17,20 @@ const styleCardSize={
   }
 
 
-
-
 class EducationCards extends React.Component {
+    
     render() {
         return (
+           
             <div>
                 <div className="row hide-on-med-and-down" style={fullScreenHeight}>
                          
                         <div>
                             {
+                                
                             this.props.data.map(education =>
-                            <div className = "col l6" style={styleCardSize}>
+
+                            <div className = "col l6" style={styleCardSize} >
                                 <EducationCard education={education}/>
                             </div>
                             )}

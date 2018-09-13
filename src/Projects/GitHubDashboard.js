@@ -34,6 +34,8 @@
 		flex:  'auto',
 		padding: '50px',
 		outlineStyle: 'solid',
+		
+		background:'rgb(255, 0, 0)',
 		backgroundColor: 'rgb(255, 0, 0, 0.3)',
 	}
 
