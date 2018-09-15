@@ -19,7 +19,7 @@ const styleHeader ={
 }
 
 const imageOverlayWhite ={
-  filter: 'brightness(100)',
+  filter: 'brightness(0) invert(1)',
   width: '40%',
 }
 

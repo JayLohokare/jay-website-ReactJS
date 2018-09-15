@@ -2,13 +2,12 @@ import React from 'react';
 
 const styleImage300px = {
   height: '100px',
-  filter: 'brightness(1000000000%)',
+  filter: 'brightness(0) invert(1)'
 }
 
 const cardBackground = {
   background:'rgb(1,87,155)',
   backgroundColor: 'rgb(1,87,155, 0.5)',
-  
   marginBottom: '-15px',
   padding: '20px',
   height: '200px'
