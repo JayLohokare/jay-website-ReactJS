@@ -1,6 +1,13 @@
 # jay-website-ReactJS
 ReactJS code for jaylohokare.com
 
+Install NodeJS (Node+npm)
+To initialize the project
+```
+npm init
+npm install react-scripts --save
+```
+
 Dependencies imports:
 ```
 npm install axios
