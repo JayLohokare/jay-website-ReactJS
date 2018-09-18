@@ -2,9 +2,9 @@
 ReactJS code for jaylohokare.com
 
 Install NodeJS (Node+npm)
+
 To initialize the project
 ```
-npm init
 npm install react-scripts --save
 ```
 
