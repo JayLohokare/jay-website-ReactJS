@@ -20,7 +20,8 @@ const styleHeader ={
 
 const imageOverlayWhite ={
   filter: 'brightness(0) invert(1)',
-  width: '40%',
+  height: '150px',
+  maxWidth: '70%',
 }
 
 const styleTextHeaderPadding = {
