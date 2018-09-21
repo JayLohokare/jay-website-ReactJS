@@ -490,7 +490,7 @@
 										<p className="white-text center">
 										{this.state.commitsCount} commits in past 90 days
 										</p>
-									<p className="white-text center">Visit my Github profile for projects</p>
+									<p className="white-text center">Visit my <a href="https://github.com/JayLohokare" className="white-text">Github <i className="zmdi zmdi-github"></i></a> profile for projects</p>
 									</div>
 								</div>
 							</div>
@@ -533,7 +533,7 @@
 									<p className="white-text center">
 										{this.state.commitsCount} Commits in past 90 days
 									</p>
-									<p className="white-text center">Visit my Github profile for more projects</p>
+									<p className="white-text center">Visit my <a href="https://github.com/JayLohokare" className="white-text">Github <i className="zmdi zmdi-github"></i></a> profile for more projects</p>
 								</div>	 
 
 							</div>
