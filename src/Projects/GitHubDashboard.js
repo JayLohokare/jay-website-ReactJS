@@ -470,8 +470,8 @@
 											if (!value) {
 												return 'color-empty';
 											}
-											if (value.count>=4){
-												return 'color-scale-4'
+											if (value.count>=6){
+												return 'color-scale-6'
 											}
 											return `color-scale-${value.count}`;
 										}}
@@ -513,8 +513,8 @@
 											if (!value) {
 												return 'color-empty';
 											}
-											if (value.count>=4){
-												return 'color-scale-4'
+											if (value.count>=6){
+												return 'color-scale-6'
 											}
 											return `color-scale-${value.count}`;
 										}}
