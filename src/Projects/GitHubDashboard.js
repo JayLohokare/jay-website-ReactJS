@@ -8,10 +8,15 @@
 	const EventsAPI2 = 'https://api.github.com/users/jayLohokare/events?page=2'
 	const EventsAPI3 = 'https://api.github.com/users/jayLohokare/events?page=3'
 	const EventsAPI4 = 'https://api.github.com/users/jayLohokare/events?page=4'
+	const EventsAPI5 = 'https://api.github.com/users/jayLohokare/events?page=5'
+	const EventsAPI6 = 'https://api.github.com/users/jayLohokare/events?page=6'
+	const EventsAPI7 = 'https://api.github.com/users/jayLohokare/events?page=7'
+	const EventsAPI8 = 'https://api.github.com/users/jayLohokare/events?page=8'
 
 	const ReposAPI1 = 'https://api.github.com/users/jayLohokare/repos?page=1'
 	const ReposAPI2 = 'https://api.github.com/users/jayLohokare/repos?page=2'
 	const ReposAPI3 = 'https://api.github.com/users/jayLohokare/repos?page=3'
+
 
 	const footerStyle = {
 		display: 'flex',
@@ -85,6 +90,10 @@
 					data2: JSON.parse(localStorage.getItem('GitCommit2')),
 					data3: JSON.parse(localStorage.getItem('GitCommit3')),
 					data4: JSON.parse(localStorage.getItem('GitCommit4')),
+					data5: JSON.parse(localStorage.getItem('GitCommit5')),
+					data6: JSON.parse(localStorage.getItem('GitCommit6')),
+					data7: JSON.parse(localStorage.getItem('GitCommit7')),
+					data8: JSON.parse(localStorage.getItem('GitCommit8')),
 				});
 			  
 			}
@@ -138,8 +147,29 @@
 					localStorage.setItem('GitCommit4',  JSON.stringify(this.state.data4))
 					localStorage.setItem('Git4CommitState', true);
 				}
+
+				if (count == 'five'){
+					localStorage.setItem('GitCommit5',  JSON.stringify(this.state.data5))
+					localStorage.setItem('Git5CommitState', true);
+				}
+
+				if (count == 'six'){
+					localStorage.setItem('GitCommit6',  JSON.stringify(this.state.data6))
+					localStorage.setItem('Git6CommitState', true);
+				}
+
+				if (count == 'seven'){
+					localStorage.setItem('GitCommit7',  JSON.stringify(this.state.data7))
+					localStorage.setItem('Git7CommitState', true);
+				}
+
+				if (count == 'eight'){
+					localStorage.setItem('GitCommit8',  JSON.stringify(this.state.data8))
+					localStorage.setItem('Git8CommitState', true);
+				}
 	
-				if(localStorage.getItem('Git1CommitState')  && localStorage.getItem('Git4CommitState') && localStorage.getItem('Git2CommitState') && localStorage.getItem('Git3CommitState')){
+				
+				if(localStorage.getItem('Git1CommitState')  && localStorage.getItem('Git8CommitState') && localStorage.getItem('Git7CommitState') && localStorage.getItem('Git6CommitState') && localStorage.getItem('Git5CommitState') && localStorage.getItem('Git4CommitState') && localStorage.getItem('Git2CommitState') && localStorage.getItem('Git3CommitState')){
 					localStorage.setItem('GitCommits', true);
 				}
 			}
@@ -166,6 +196,10 @@
 			commits = commits.concat( ((this.state.data2)));
 			commits = commits.concat( ((this.state.data3)));
 			commits = commits.concat( ((this.state.data4)));
+			commits = commits.concat( ((this.state.data5)));
+			commits = commits.concat( ((this.state.data6)));
+			commits = commits.concat( ((this.state.data7)));
+			commits = commits.concat( ((this.state.data8)));
 
 
 			var i = 0;
@@ -231,6 +265,10 @@
 				data2: [],
 				data3: [],
 				data4: [],
+				data5: [],
+				data6: [],
+				data7: [],
+				data8: [],
 
 				repos1: [],
 				repos2: [],
@@ -302,9 +340,57 @@
 		    	isLoading: false
 		    }));
 			 
+			axios.get(EventsAPI5)
+			.then(result => {this.setState({
+				data5: result.data,
+				isLoading: false
+			}),
+			this.setGitCache("Commits", 'five')
+			})
+			.catch(error => this.setState({
+		    	errorGit : error,
+		    	isLoading: false
+		    }));
+			 
 
+			axios.get(EventsAPI6)
+			.then(result => {this.setState({
+				data6: result.data,
+				isLoading: false
+			}),
+			this.setGitCache("Commits", 'six')
+			})
+			.catch(error => this.setState({
+		    	errorGit : error,
+		    	isLoading: false
+			}));
+			
+			axios.get(EventsAPI7)
+			.then(result => {this.setState({
+				data7: result.data,
+				isLoading: false
+			}),
+			this.setGitCache("Commits", 'seven')
+			})
+			.catch(error => this.setState({
+		    	errorGit : error,
+		    	isLoading: false
+			}));
+			
+			axios.get(EventsAPI8)
+			.then(result => {this.setState({
+				data8: result.data,
+				isLoading: false
+			}),
+			this.setGitCache("Commits", 'eight')
+			})
+			.catch(error => this.setState({
+		    	errorGit : error,
+		    	isLoading: false
+		    }));
+			 
 
-
+			 
 		    //Making 3 seperate API calls for getting 90 projects from GIT
 			axios.get(ReposAPI1)
 		    .then(result => {
