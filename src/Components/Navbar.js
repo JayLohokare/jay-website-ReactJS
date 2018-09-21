@@ -21,6 +21,10 @@ const paddingB ={
   marginBottom: '20px'
 }
 
+const imageNav ={
+  position: 'absolute',
+  height: '180px'
+}
 
 
 
@@ -45,11 +49,9 @@ class Navbar extends Component {
    
         <ul id="slide-out" className={this.state.navClass}  style={styleZindez}>
           <li>
-            <div className="user-view grey darken-4">
-              <div className="background">
-                <img src="images/office.jpg" alt="backgroundImage"></img>
-              </div>
-
+            <img style={imageNav} src="images/navBack.jpg" alt="jayLohokare"></img>
+              
+            <div className="user-view  ">
               <img className="circle" src="images/jay.jpg" alt="jayLohokare"></img>
               <span className="white-text name">Jay Lohokare</span>
               <a href="mailto:jaylohokare@gmail.com"><span className="white-text email">jaylohokare@gmail.com</span></a>
