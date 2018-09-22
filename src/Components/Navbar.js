@@ -23,7 +23,7 @@ const paddingB ={
 
 const imageNav ={
   position: 'absolute',
-  height: '163px'
+  height: '168px'
 }
 
 
