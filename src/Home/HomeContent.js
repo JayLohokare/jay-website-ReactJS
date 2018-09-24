@@ -53,7 +53,7 @@ class HomeContent extends React.Component {
                     </div>
                     <br/>
                     <a data-target="contactModal" style={styleContactModal} className="right modal-trigger red btn-floating btn-large waves-effect   ">
-                      <i className="zmdi zmdi-mail-send"></i>
+                      <i className="zmdi zmdi-comment-text"></i>
                     </a>
                   </div>
                 </div>
