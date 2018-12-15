@@ -70,6 +70,22 @@ class ProjectCard extends React.Component {
     }
     return render
   }
+  
+  
+  getDockerURL(json){ 
+    var render = null;
+    for(var key in json){
+      if (key=="Docker"){
+        render =
+          <li>
+            <a   href={json[key.toString()].toString()} className="  btn-floating waves-effect waves-light blue"><i className="zmdi zmdi-device-hub"></i></a>
+          </li>
+      }
+    }
+    return render
+  }
+  
+    
 
   getWebsiteURL(json){ 
     var render = null;
@@ -88,6 +104,7 @@ class ProjectCard extends React.Component {
     var render =
       <div>
         {this.getSlideShareURL(json)}
+        {this.getDockerURL(json)}
         {this.getGithubURL(json)}
         {this.getWebsiteURL(json)}
       </div>
