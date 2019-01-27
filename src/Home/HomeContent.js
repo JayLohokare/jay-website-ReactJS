@@ -68,7 +68,7 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Hello!</h4>
                       
                       <p className="black-text">
-                          I'm Jay Lohokare, a Graduate student pursuing Masters in Computer Science at Stony Brook University.
+                          I'm Jay Lohokare, a Data scientist and software developer working with McKinsey & Co as a Digital consultant
                           <br/>
                           I love exploring new technology domains, building innovative products & applications. I have worked on systems spanning trending domains like Deep learning, Blockchain, IoT, Brain Interfaces, Mixed reality, Big-data/distributed systems and Health-tech. I make sure to stay up to date with technology and business opportunities. You will often find me traveling the world attending conferences, events, hackathons and meetups!
                           <br></br>
@@ -104,11 +104,11 @@ class HomeContent extends React.Component {
                      
                       <p className="black-text">
                           I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
-                          At Stony Brook University, I am a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab.
-                          At these labs, I work mainly in various applied deep learning domains and big data systems.
+                          I was a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab while pursuing my Masters in Computer Science at State University Of New York, Stony Brook. 
+                          
                       </p>
                       <p className="black-text">
-                      I led the formation of IoT lab at College of Engineering Pune, and worked with Professor Rahul Adhao for creating highly scalable IoT solutions and platform.
+                      During my undergrad years, I lead the formation of IoT lab at College of Engineering Pune, and worked with Professor Rahul Adhao for creating highly scalable IoT solutions and platform.
                       </p>
                       <br/>
 
@@ -142,7 +142,7 @@ class HomeContent extends React.Component {
                         <br/>
                         I am closely related to USA based startups <a href="http://www.insurebits.io">Insurebits</a> and <a href="http://www.daix.io">Daix</a>, having led development of their core technology/data platforms.
                         
-                        I have interned with NTT DATA (Tokyo) and McKinsey & Co (New York), and have consulted multiple companies in Pune-Mumbai, New York, San Francisco, Munich and Seattle.
+                        I have formally worked at NTT DATA (Tokyo) and McKinsey & Co (New York); and have done projects with multiple companies in Pune-Mumbai, New York, San Francisco, Munich and Seattle.
                         
                       </p>
                       <br/>
