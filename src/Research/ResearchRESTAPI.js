@@ -4,7 +4,7 @@ import Loader from '../Components/Loader';
 import M from 'materialize-css';
 import ResearchCards from './ResearchCards';
 
-const researchAPI = 'https://jaylohokare.ml:8000/research/'
+const researchAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/research/'
 
 let axiosConfig = {
   headers: {
@@ -60,7 +60,7 @@ class ResearchRESTAPI extends Component {
 
     return (
       <div>
-         <ResearchCards data={data} />
+         <ResearchCards data={data.data} />
         
       </div>
       	
