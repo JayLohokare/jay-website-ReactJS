@@ -7,7 +7,7 @@ import M from 'materialize-css';
 
 import GitHubDashboard from './GitHubDashboard';
 
-const projectsAPI = 'https://jaylohokare.ml:8000/projects/'
+const projectsAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/projects/'
 
 let axiosConfig = {
   headers: {
@@ -69,7 +69,7 @@ class ProjectRESTAPI extends Component {
     return (
       <div>
         <div className="row">
-          <ProjectCards data={data} /> 
+          <ProjectCards data={data.data} /> 
         </div>
 
         <div className="row"> 
