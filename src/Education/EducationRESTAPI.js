@@ -32,7 +32,7 @@ class EducationRESTAPI extends Component {
     this.setState({ isLoading: true });
     axios.get(educationAPI, null, axiosConfig)
       .then(result => this.setState({
-        data: result.data,
+        data: result.data.data,
         isLoading: false
       }))
       .catch(error => {
@@ -64,7 +64,7 @@ class EducationRESTAPI extends Component {
 
     return (
       <div>
-        <EducationCards data={data.data} />
+        <EducationCards data={data} />
         
       </div>
       
