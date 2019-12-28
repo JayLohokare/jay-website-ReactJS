@@ -7,7 +7,7 @@ import M from 'materialize-css';
 
 import GitHubDashboard from './GitHubDashboard';
 
-const projectsAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/projects'
+const projectsAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/'
 
 let axiosConfig = {
   headers: {
