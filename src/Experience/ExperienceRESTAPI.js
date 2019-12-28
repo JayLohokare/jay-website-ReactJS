@@ -4,7 +4,7 @@ import ExperienceCards from './ExperienceCards';
 import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
-const experienceAPI = 'https://jaylohokare.ml:8000/experience/'
+const experienceAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/experience/'
 
 let axiosConfig = {
   headers: {
@@ -66,7 +66,7 @@ class ExperienceRESTAPI extends Component {
 
     return (
       <div>
-        <ExperienceCards data={data} />
+        <ExperienceCards data={data.data} />
         
       </div>
       
