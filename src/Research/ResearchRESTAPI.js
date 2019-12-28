@@ -33,7 +33,7 @@ class ResearchRESTAPI extends Component {
     this.setState({ isLoading: true });
     axios.get(researchAPI, null, axiosConfig)
       .then(result => this.setState({
-        data: result.data,
+        data: result.data.data,
         isLoading: false
       }))
       .catch(error => {
@@ -61,7 +61,7 @@ class ResearchRESTAPI extends Component {
 
     return (
       <div>
-         <ResearchCards data={data.data} />
+         <ResearchCards data={data} />
         
       </div>
       	
