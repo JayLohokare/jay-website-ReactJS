@@ -4,7 +4,7 @@ import EducationCards from './EducationCards';
 import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
-const educationAPI = 'https://jaylohokare.ml:8000/education/'
+const educationAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/education/'
 
 let axiosConfig = {
   headers: {
@@ -64,7 +64,7 @@ class EducationRESTAPI extends Component {
 
     return (
       <div>
-        <EducationCards data={data} />
+        <EducationCards data={data.data} />
         
       </div>
       
