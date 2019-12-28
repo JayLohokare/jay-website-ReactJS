@@ -61,7 +61,7 @@ class UpdatesRESTAPI extends Component {
     return (
       <div>
         <div className="row">
-          <UpdatesCards data={data} /> 
+          <UpdatesCards data={data.data} /> 
         </div>
 
       </div>
