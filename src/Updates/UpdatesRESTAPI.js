@@ -5,12 +5,13 @@ import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
 
-const updatesAPI = 'https://jaylohokare.ml:8000/awards/'
+const updatesAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/awards'
 
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json;charset=UTF-8',
       "Access-Control-Allow-Origin": "*",
+	authorization: Bearer 
   }
 }
 
