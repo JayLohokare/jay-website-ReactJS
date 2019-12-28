@@ -10,8 +10,7 @@ const updatesAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
-	authorization: Bearer 
+      "Access-Control-Allow-Origin": "*"
   }
 }
 
