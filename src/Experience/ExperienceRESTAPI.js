@@ -34,7 +34,7 @@ class ExperienceRESTAPI extends Component {
     this.setState({ isLoading: true });
     axios.get(experienceAPI, null, axiosConfig)
       .then(result => this.setState({
-        data: result.data,
+        data: result.data.data,
         isLoading: false
       }))
       .catch(error => {
@@ -66,7 +66,7 @@ class ExperienceRESTAPI extends Component {
 
     return (
       <div>
-        <ExperienceCards data={data.data} />
+        <ExperienceCards data={data} />
         
       </div>
       
