@@ -4,12 +4,12 @@ import Loader from '../Components/Loader';
 import M from 'materialize-css';
 import ResearchCards from './ResearchCards';
 
-const researchAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/research/'
+const researchAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/research'
 
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "*"
   }
 }
 
