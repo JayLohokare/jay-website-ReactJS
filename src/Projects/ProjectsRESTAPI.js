@@ -7,12 +7,12 @@ import M from 'materialize-css';
 
 import GitHubDashboard from './GitHubDashboard';
 
-const projectsAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/projects/'
+const projectsAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/projects'
 
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "*"
   }
 }
 
