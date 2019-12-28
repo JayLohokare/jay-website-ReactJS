@@ -4,12 +4,12 @@ import EducationCards from './EducationCards';
 import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
-const educationAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/education/'
+const educationAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/education'
 
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "*"
   }
 }
 
