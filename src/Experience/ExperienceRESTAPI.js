@@ -4,12 +4,12 @@ import ExperienceCards from './ExperienceCards';
 import Loader from '../Components/Loader';
 import M from 'materialize-css';
 
-const experienceAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/experience/'
+const experienceAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/experience'
 
 let axiosConfig = {
   headers: {
       'Content-Type': 'application/json;charset=UTF-8',
-      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Origin": "*"
   }
 }
 
