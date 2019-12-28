@@ -4,6 +4,7 @@ import Loader from '../Components/Loader';
 import M from 'materialize-css';
 import ResearchCards from './ResearchCards';
 
+//IBM Cloud functions based API
 const researchAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/research/'
 
 let axiosConfig = {
@@ -69,3 +70,5 @@ class ResearchRESTAPI extends Component {
 }
 
 export default ResearchRESTAPI;
+
+
