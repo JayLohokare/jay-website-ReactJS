@@ -6,7 +6,8 @@ const cardBackground = {
   padding: '20px',
   height: '200px',
   overflow: 'auto',
-  position: 'relative'
+  position: 'relative',
+  borderRadius: '25px'
 }
 
 const cardBackgroundSmall = {
@@ -16,6 +17,7 @@ const cardBackgroundSmall = {
   height: '230px',
   overflow: 'auto',
   position: 'relative',
+  borderRadius: '25px'
 }
 
 const fabStyle = {
