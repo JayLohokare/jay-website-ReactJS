@@ -42,6 +42,12 @@ class UpdateCard extends React.Component {
           console.log(url)
           render = <a style={fabStyle} href={url} target="_blank" className="right btn-floating   waves-effect waves-light pink"><i className="zmdi zmdi-facebook"></i></a>
         }
+        
+        else if(key== "Website"){
+          var url = json[key.toString()].toString()
+          render = <a  style={fabStyle} href={url} className="right btn-floating   waves-effect waves-light pink"><i className="zmdi zmdi-globe"></i></a>
+        }
+        
       }
     }
   
