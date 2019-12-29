@@ -68,9 +68,9 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Hello!</h4>
                       
                       <p className="black-text">
-                          I'm Jay Lohokare, a Data scientist and software developer working with McKinsey & Co as a Data consultant.
+                          I'm Jay Lohokare, a ML Engineer and software developer working with McKinsey & Co as a Data consultant.
                           <br/>
-                          I love exploring new technology domains, building innovative products & applications. I have worked on systems spanning trending domains like Deep learning, Blockchain, IoT, Brain Interfaces, Mixed reality, Big-data/distributed systems and Health-tech. I make sure to stay up to date with technology and business opportunities. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
+                          I love exploring new technology domains, building innovative products & applications. I make sure to stay up to date with technology and business opportunities. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
                       </p>
                       <br/>
