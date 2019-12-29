@@ -138,7 +138,7 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Startup/Industry experience</h4>
                        
                       <p className="black-text">
-                        I have formed, lead, and contributed to over five startups, creating products with a cumulative count of over 3 million users. 
+                        I have formed, lead, and contributed to over five startups; Creating products with a cumulative count of over 3 million users. 
                         I have served various Fortune 500 companies through my startups / my tenure at McKinsey and Co; working in multiple locations (Spanning three continents and over eight countries), across a variety of industries like Healthcare, Oil & gas, FinTech, Consumer electronics, Smart cities, Heavy industries, Energy, Utilities, etc. 
                         Designing and developing technical products is my key strength, and I also have experience in marketing, business strategy, and product management.
                         
