@@ -43,7 +43,5 @@ To point your domain to this S3 bucket:
 
 Alternatively, use <b>Netlify service</b> (Free hosting based on Github). The services is easy to use, takes code from github and automatically deploys it to the domain with free SSL (HTTPS)
 
-Get Free Domains at 
-https://freenom.com/
-
-jaylohokare.com API is available at https://jaylohokare.ml:8000
+jaylohokare.com API is available at https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/
+Currently, I have deployed the API using IBM cloud functions
