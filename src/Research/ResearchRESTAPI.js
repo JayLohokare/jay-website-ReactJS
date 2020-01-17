@@ -17,7 +17,7 @@ let axiosConfig = {
 class ResearchRESTAPI extends Component {
 
   showGitshowErrorError(){
-      M.toast('Something went wrong trying to fetch research', 4000, 'rounded');
+     M.toast('Oops! API Error. Try switching off VPN/Proxy.', 4000, 'rounded');
     }
 
   constructor(props) {
