@@ -20,7 +20,7 @@ class ProjectRESTAPI extends Component {
 
   showGitError(){
    	
-      M.toast('Some components may not load due to API errors', 4000, 'rounded');
+      M.toast('Oops! API Error. Try switching off VPN/Proxy.', 4000, 'rounded');
     }
 
   log(){
