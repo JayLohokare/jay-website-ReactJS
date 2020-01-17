@@ -16,7 +16,7 @@ let axiosConfig = {
 class EducationRESTAPI extends Component {
 
   showGitError(){
-      M.toast('Something went wrong trying to fetch education', 4000, 'rounded');
+      M.toast('Oops! API Error. Try switching off VPN/Proxy.', 4000, 'rounded');
     }
 
   constructor(props) {
