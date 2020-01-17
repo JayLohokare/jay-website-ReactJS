@@ -6,7 +6,7 @@ import M from 'materialize-css';
 
 
 
-const experienceAPI = 'http://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/experience'
+const experienceAPI = 'https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/experience'
 
 let axiosConfig = {
   headers: {
