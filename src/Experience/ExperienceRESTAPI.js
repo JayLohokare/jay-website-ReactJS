@@ -18,7 +18,7 @@ let axiosConfig = {
 class ExperienceRESTAPI extends Component {
 
   showError(){
-      M.toast('Something went wrong trying to fetch experience', 4000, 'rounded');
+      M.toast('Oops! API Error. Try switching off VPN/Proxy.', 4000, 'rounded');
     }
 
   constructor(props) {
