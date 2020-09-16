@@ -48,7 +48,7 @@ class HomeContent extends React.Component {
                         </div>
                       </div>
                       <h6 className="center flow-text light-blue-text text-darken-3">Jay Lohokare</h6>
-                      <h6 className="flow-text  center">Data scientist & Software developer</h6>
+                      <h6 className="flow-text  center">Product Manager & Software developer</h6>
                       <p className=" center">Tech-entreprenuer, Music Lover, Guitarist & Foodie</p>
                     </div>
                     <br/>
@@ -68,8 +68,8 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Hello!</h4>
                       
                       <p className="black-text">
-                          I'm Jay Lohokare, a ML Engineer and software developer working with McKinsey & Co as a Data consultant.
-                          <br/>
+                          I'm Jay Lohokare, a Technical Product Manager working with McKinsey & Co as a Specialist Associate.
+                          <br/><br/>
                           I love exploring new technology domains, building innovative products & applications. I make sure to stay up to date with technology and business opportunities. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
                       </p>
@@ -103,12 +103,9 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text ">Research background</h4>
                      
                       <p className="black-text">
-                          I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
-                          I was a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab while pursuing my Masters in Computer Science at State University Of New York, Stony Brook. 
-                          
-                      </p>
-                      <p className="black-text">
-                      During my undergrad years, I led the formation of IoT lab at College of Engineering Pune and worked with Professor Rahul Adhao for creating highly scalable IoT solutions and platform.
+                      I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
+                      <br/><br/>I was a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab while pursuing my Masters in Computer Science at State University Of New York, Stony Brook.                 
+                      <br/><br/>During my undergrad years, I led the formation of IoT lab at College of Engineering Pune and worked with Professor Rahul Adhao for creating highly scalable IoT solutions and platform.
                       </p>
                       <br/>
 
@@ -138,12 +135,15 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Startup/Industry experience</h4>
                        
                       <p className="black-text">
-                        I have formed, lead, and contributed to over five startups; Creating products with a cumulative count of over 3 million users. 
-                        I have served various Fortune 500 companies through my startups / my tenure at McKinsey and Co; working in multiple locations (Spanning three continents and over eight countries), across a variety of industries like Healthcare, Oil & gas, FinTech, Consumer electronics, Smart cities, Heavy industries, Energy, Utilities, etc. 
-                        Designing and developing technical products is my key strength, and I also have experience in marketing, business strategy, and product management.
+                        I have formed, lead, and contributed to over five startups; Creating products with a cumulative count of over 5 million users. 
+                        <br/><br/>I have served various Fortune 500 companies through my startups / my tenure at McKinsey and Co; working in multiple locations (Spanning three continents and over eight countries), across a variety of industries like Healthcare, Oil & gas, FinTech, Consumer electronics, Smart cities, Heavy industries, Energy, Utilities, etc. 
+                        <br/><br/>My key strength is designing, developing and executing technologies. I also have experience in marketing, business strategy, and product management.
                         
                       </p>
                       <br/>
+                      <div className="center">
+                      <a href="/experience" className="btn waves-effect light-blue darken-3 center waves-light  ">Experience</a>
+                      </div>
                     </div>
                     <br/>
                   </div>
@@ -159,9 +159,9 @@ class HomeContent extends React.Component {
                       
                       <p className="black-text">
                         I love visiting new cities/countries trying out new food, music and for hackathons! My journey of exploring and learning has helped me meet some awesome people, go to numerous countries and get an experience of a variety of rich cultures. I love creating and consuming music. I am a trained Guitarist and can play over 15 music instruments.
-                        <br/>
+                        <br/><br/>
                         You can find all my projects on my Github account and presentations on Slideshare. Have a look at my Blog where I share my experiences, opinions and thoughts!
-                        <br/>
+                        <br/><br/>
                         Let's get connected!
                         Drop me an email at <a href="mailto:jaylohokare@gmail.com">jaylohokare@gmail.com</a>
                       </p>
