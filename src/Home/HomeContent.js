@@ -48,7 +48,7 @@ class HomeContent extends React.Component {
                         </div>
                       </div>
                       <h6 className="center flow-text light-blue-text text-darken-3">Jay Lohokare</h6>
-                      <h6 className="flow-text  center">Product Manager & Software developer</h6>
+                      <h6 className="flow-text  center">Software developer & Product Manager</h6>
                       <p className=" center">Tech-entreprenuer, Music Lover, Guitarist & Foodie</p>
                     </div>
                     <br/>
@@ -68,7 +68,7 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Hello!</h4>
                       
                       <p className="black-text">
-                          I'm Jay Lohokare, a Technical Product Manager working with McKinsey & Co as a Specialist Associate.
+                          I'm Jay Lohokare, a Software / ML Engineer working with AWS as a SWE2.
                           <br/><br/>
                           I love exploring new technology domains, building innovative products & applications. I make sure to stay up to date with technology and business opportunities. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
@@ -136,6 +136,7 @@ class HomeContent extends React.Component {
                        
                       <p className="black-text">
                         I have formed, lead, and contributed to over five startups; Creating products with a cumulative count of over 5 million users. 
+                        <br/><br/>I am currently working with AWS Identity / Organizations team building world scale full stack / data systems. 
                         <br/><br/>I have served various Fortune 500 companies through my startups / my tenure at McKinsey and Co; working in multiple locations (Spanning three continents and over eight countries), across a variety of industries like Healthcare, Oil & gas, FinTech, Consumer electronics, Smart cities, Heavy industries, Energy, Utilities, etc. 
                         <br/><br/>My key strength is designing, developing and executing technologies. I also have experience in marketing, business strategy, and product management.
                         
