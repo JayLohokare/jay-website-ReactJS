@@ -70,7 +70,7 @@ class HomeContent extends React.Component {
                       <p className="black-text">
                           I'm Jay Lohokare, a Software / ML Engineer working with AWS as a SWE2.
                           <br/><br/>
-                          I love exploring new technology domains, building innovative products & applications. I make sure to stay up to date with technology and business opportunities. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
+                          I love exploring new technology domains, building innovative products & applications. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
                       </p>
                       <br/>
