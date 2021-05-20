@@ -68,7 +68,7 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Hello!</h4>
                       
                       <p className="black-text">
-                          I'm Jay Lohokare, a Software / ML Engineer working with AWS as a SWE2.
+                          I'm Jay Lohokare, a Product-focused Software / ML Engineer working with AWS as a SWE2.
                           <br/><br/>
                           I love exploring new technology domains, building innovative products & applications. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
@@ -100,17 +100,17 @@ class HomeContent extends React.Component {
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white scrollbar" id="style-1"  >
                     <div className="white card-content light-blue-text text-darken-3">
-                      <h4 className="center flow-text red-text ">Research background</h4>
+                      <h4 className="center flow-text red-text ">Interests & Research</h4>
                      
                       <p className="black-text">
-                      I have won over 15 hackathons, I have numerous research publications from top IEEE/ACM conferences, and I have created multiple new technical platforms (Co-Founded three tech-startups). 
+                      I have won 16 hackathons over 3 continents, I have 8 research publications in top IEEE/ACM conferences, and I have lead creation of multiple software/data products/platforms (Co-Founded three startups). 
                       <br/><br/>I was a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab while pursuing my Masters in Computer Science at State University Of New York, Stony Brook.                 
-                      <br/><br/>During my undergrad years, I led the formation of IoT lab at College of Engineering Pune and worked with Professor Rahul Adhao for creating highly scalable IoT solutions and platform.
+                      <br/><br/>During my undergrad years, I led the formation of IoT lab at College of Engineering Pune and worked with Professor Rahul Adhao for creating IoT solutions.
                       </p>
                       <br/>
 
                       <div className="center">
-                      <a href="/research" className="btn waves-effect light-blue darken-3 center waves-light  ">Publications</a>
+                      <a href="/research" className="btn waves-effect light-blue darken-3 center waves-light">Publications</a>
                       </div>
                       
 
@@ -135,10 +135,10 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text  ">Startup/Industry experience</h4>
                        
                       <p className="black-text">
-                        I have formed, lead, and contributed to over five startups; Creating products with a cumulative count of over 5 million users. 
-                        <br/><br/>I am currently working with AWS Identity / Organizations team building world scale full stack / data systems. 
-                        <br/><br/>I have served various Fortune 500 companies through my startups / my tenure at McKinsey and Co; working in multiple locations (Spanning three continents and over eight countries), across a variety of industries like Healthcare, Oil & gas, FinTech, Consumer electronics, Smart cities, Heavy industries, Energy, Utilities, etc. 
-                        <br/><br/>My key strength is designing, developing and executing technologies. I also have experience in marketing, business strategy, and product management.
+                        I have been a founding member of five startups and I have worked with companies like Amazon, NTT DATA, McKinsey & Co; Creating products with a cumulative count of over 5 million users. 
+                        <br/><br/>I am currently working with AWS Identity / Organizations team building world scale backend & data systems. 
+                        <br/><br/>My key strength is the flexibility and agility I bring while solving problems.
+                        <br/><br/>I have served and worked with various Fortune 500 companies; working in three continents/over eight countries; across a variety of industries like Cloud/SaaS, Healthcare, FinTech, Consumer electronics, Mining, Energy & Utilities. 
                         
                       </p>
                       <br/>
@@ -159,11 +159,11 @@ class HomeContent extends React.Component {
                     <div className="white card-content light-blue-text text-darken-3">
                       
                       <p className="black-text">
-                        I love visiting new cities/countries trying out new food, music and for hackathons! My journey of exploring and learning has helped me meet some awesome people, go to numerous countries and get an experience of a variety of rich cultures. I love creating and consuming music. I am a trained Guitarist and can play over 15 music instruments.
+                        I love visiting new cities/countries trying out new food, music or for hackathons! My journey of exploring and learning has helped me meet amazing people, go to numerous countries and to experience rich cultures. I love creating and consuming music. I am a trained Guitarist and can play over 15 music instruments.
                         <br/><br/>
                         You can find all my projects on my Github account and presentations on Slideshare. Have a look at my Blog where I share my experiences, opinions and thoughts!
                         <br/><br/>
-                        Let's get connected!
+                        Want to chat about tech / entreprenuership / travel / music?
                         Drop me an email at <a href="mailto:jaylohokare@gmail.com">jaylohokare@gmail.com</a>
                       </p>
                       <br></br>
