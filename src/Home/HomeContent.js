@@ -103,7 +103,7 @@ class HomeContent extends React.Component {
                       <h4 className="center flow-text red-text ">Interests & Research</h4>
                      
                       <p className="black-text">
-                      I have won 16 hackathons over 3 continents, I have 8 research publications in top IEEE/ACM conferences, and I have lead creation of multiple software/data products/platforms (Co-Founded three startups). 
+                      I have published 8 research publications in top IEEE/ACM conferences and won 16 hackathons over 3 continents.
                       <br/><br/>I was a part of Professor Fan Ye's research group at the ECE MOCA lab and Professor Fusheng Wang's research group at the Biomedical Big data analytics lab while pursuing my Masters in Computer Science at State University Of New York, Stony Brook.                 
                       <br/><br/>During my undergrad years, I led the formation of IoT lab at College of Engineering Pune and worked with Professor Rahul Adhao for creating IoT solutions.
                       </p>
@@ -137,8 +137,7 @@ class HomeContent extends React.Component {
                       <p className="black-text">
                         I have been a founding member of five startups and I have worked with companies like Amazon, NTT DATA, McKinsey & Co; Creating products with a cumulative count of over 5 million users. 
                         <br/><br/>I am currently working with AWS Identity / Organizations team building world scale backend & data systems. 
-                        <br/><br/>My key strength is the flexibility and agility I bring while solving problems.
-                        <br/><br/>I have served and worked with various Fortune 500 companies; working in three continents/over eight countries; across a variety of industries like Cloud/SaaS, Healthcare, FinTech, Consumer electronics, Mining, Energy & Utilities. 
+                        <br/><br/>I have served and worked with various Fortune 500 companies; working in three continents/six countries; across a variety of industries like Cloud/SaaS, Healthcare, FinTech, Consumer electronics, Mining, Energy & Utilities. 
                         
                       </p>
                       <br/>
@@ -159,7 +158,9 @@ class HomeContent extends React.Component {
                     <div className="white card-content light-blue-text text-darken-3">
                       
                       <p className="black-text">
-                        I love visiting new cities/countries trying out new food, music or for hackathons! My journey of exploring and learning has helped me meet amazing people, go to numerous countries and to experience rich cultures. I love creating and consuming music. I am a trained Guitarist and can play over 15 music instruments.
+                        I love visiting new cities/countries trying out new food, music or for hackathons & conferences! My journey of exploring and learning has helped me meet amazing people, visit numerous countries and to experience rich cultures. 
+                        <br/>
+                        I love creating and consuming music. I am a trained Guitarist and can play over 15 music instruments.
                         <br/><br/>
                         You can find all my projects on my Github account and presentations on Slideshare. Have a look at my Blog where I share my experiences, opinions and thoughts!
                         <br/><br/>
