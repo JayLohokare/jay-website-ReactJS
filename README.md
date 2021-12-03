@@ -45,3 +45,5 @@ Alternatively, use <b>Netlify service</b> (Free hosting based on Github). The se
 
 jaylohokare.com API is available at https://e517351b.us-south.apigw.appdomain.cloud/jaylohokare/
 Currently, I have deployed the API using IBM cloud functions
+
+
