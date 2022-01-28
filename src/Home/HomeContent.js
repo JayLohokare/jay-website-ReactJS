@@ -51,7 +51,7 @@ class HomeContent extends React.Component {
                         </div>
                       </div>
                       <h4 className="blue-text center">Jay Lohokare</h4>
-                      <h5 className=" flow-text center">Software developer & Product Manager</h5>
+                      <h5 className="blue-text center">Software developer & Product Manager</h5>
                       <h6 className="black-text center">Tech-entreprenuer, Music Lover, Guitarist & Foodie</h6>
                     </div>
                     <br/>
