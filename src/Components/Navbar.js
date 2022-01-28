@@ -52,7 +52,7 @@ class Navbar extends Component {
             <img style={imageNav} src="images/navBack.jpg" alt="jayLohokare"></img>
               
             <div className="user-view  ">
-              <img className="circle" src="images/jay.jpg" alt="jayLohokare"></img>
+              <img className="circle" src="images/headshotMin.png" alt="jayLohokare"></img>
               <span className="white-text name">Jay Lohokare</span>
               <a href="mailto:jaylohokare@gmail.com"><span className="white-text email">jaylohokare@gmail.com</span></a>
             </div>
