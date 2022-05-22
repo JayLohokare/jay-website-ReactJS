@@ -200,7 +200,7 @@ class HomeContent extends React.Component {
                         <br/><br/>
                         You can find all my projects on my Github account and presentations on Slideshare. Have a look at my Blog where I share my experiences, opinions and thoughts!
                         <br/><br/>
-                        I am a strong advocate of mentorship. 
+                        I am a strong advocate of mentorship - I proactively work on guiding, working with and making right opportunities available to my juniors, colleagues and anyone looking to grow together!
                         <br/><br/>
                         Want to chat about tech / entreprenuership / travel / music?
                         Drop me an email at <a href="mailto:jaylohokare@gmail.com">jaylohokare@gmail.com</a>
