@@ -102,7 +102,7 @@ class HomeContent extends React.Component {
                       <h4 className="center amber-text text-darken-4">Hello!</h4>
                       
                       <p className="black-text">
-                          I'm Jay Lohokare, a Product-focused Software / ML Engineer working with Robinhiood as a Senior Software Engineer
+                          I'm Jay Lohokare, a Product-focused Software / ML Engineer working with Robinhood as a Senior Software Engineer
                           <br/><br/>
                           I love exploring new technology domains, building innovative products & applications. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
