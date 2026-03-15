@@ -102,7 +102,7 @@ class HomeContent extends React.Component {
                       <h4 className="center amber-text text-darken-4">Hello!</h4>
                       
                       <p className="black-text">
-                         I love exploring new technology domains, building innovative products & applications. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
+                         I love exploring new tech, building products and organizations. You will often find me traveling the world attending conferences, events, hackathons, and meetups!
                           <br></br>
                       </p>
                       <br/>
