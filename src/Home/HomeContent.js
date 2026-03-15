@@ -129,7 +129,7 @@ class HomeContent extends React.Component {
               </div>
             </div>
 
-            <div  className="section">
+            {/* <div  className="section">
               <div className="row valign-wrapper">
                 <div className="col s12  offset-m3 offset-l3 l6 m6 valign">
                   <div className="card white scrollbar" id="style-1"  >
@@ -154,7 +154,7 @@ class HomeContent extends React.Component {
                         Google Scholars
                         </a>
                       </div>
-                      <br/> */}
+                      <br/> 
 
                     </div>
                   </div>
@@ -184,7 +184,7 @@ class HomeContent extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div  className="section" >
               <div className="row valign-wrapper" style={marginBottom150px}>
@@ -226,7 +226,8 @@ class HomeContent extends React.Component {
                   </div>
                 </div>
               </div>
-              <div style={styleBuiltWith}>
+
+              {/* <div style={styleBuiltWith}>
                 <p className="white-text center" >
                 Built with <img src="images/heart.png" style={heartStyle}/> using</p>
                 <p className="white-text center">
@@ -236,7 +237,8 @@ class HomeContent extends React.Component {
                   <a href="https://www.mongodb.com/" target="_blank"><img  src="images/mongo.png" style={madeUsingStyle}/></a>
                 
                 </p>
-              </div>
+              </div> */}
+
             </div>
           </div>
         );
