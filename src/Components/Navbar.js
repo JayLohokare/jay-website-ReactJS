@@ -63,7 +63,7 @@ class Navbar extends Component {
           <li><a className = "waves-effect" target="_blank" href="/docs/CV.pdf">Resume</a></li>
 
           <li><div className="divider"></div></li>
-          <li><a className = "waves-effect" href="/research">Research</a></li>
+          <li><a className = "waves-effect" href="https://scholar.google.com/citations?user=mV0ZrH4AAAAJ&hl=en">Research</a></li>
 
 
         </ul>
