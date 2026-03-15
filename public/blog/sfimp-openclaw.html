@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automating the SF Indian Music Project Operations with OpenClaw | Jay Lohokare</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <style>
+        /* Minimal layout tweaks to fit the standard Materialize aesthetic */
+        body {
+            background-color: #fafafa;
+            overflow-x: hidden;
+        }
+
+        /* Typography spacing adjustments for pure Materialize layout */
+        .blog-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            padding-bottom: 60px;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content h5 {
+            margin-top: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            color: #212121;
+        }
+
+        /* Adjust Materialize's native blockquote */
+        blockquote {
+            font-size: 1.2rem;
+            color: #616161;
+            border-left: 4px solid #039be5;
+            margin: 2.5rem 0;
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+        }
+
+        .brand-logo {
+            font-weight: 300;
+        }
+
+        /* Custom class for the full-width white section */
+        .section-white {
+            background-color: #ffffff;
+            padding: 50px calc(50vw - 50%);
+            margin: 40px calc(-50vw + 50%);
+        }
+
+        .section-white h5:first-child {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="nav-mobile" class="sidenav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+
+    <main class="container">
+        <div class="row">
+            <div class="col s12 m12 l10 offset-l1">
+
+                <div class="section" style="margin-top: 40px;">
+                    <h3 class="header black-text" style="font-weight: 600; line-height: 1.3;">
+                        Automating the SF Indian Music Project Operations with OpenClaw
+                    </h3>
+                    <p class="grey-text text-darken-1"
+                        style="display: flex; align-items: center; font-size: 1rem; margin-top: 15px;">
+                        <i class="material-icons tiny" style="margin-right: 5px;">date_range</i> March 13, 2026
+                        <span style="margin: 0 10px;">|</span>
+                        <i class="material-icons tiny" style="margin-right: 5px;">timer</i> 13 min read
+                    </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="section blog-content black-text">
+                    <p>Let me paint a picture of a problem I’ve been wrestling with lately. The San Francisco Indian
+                        Music Project (SFIMP) started as a passion initiative to host recurring community jam sessions,
+                        but it has quickly grown into something much bigger. We are currently in the process of
+                        establishing it as a 501(c)(3) non-profit to formalize our goals of bringing high-quality Indian
+                        music to the Bay Area. But here is the catch: we are entirely volunteer-run.</p>
+
+                    <p>Everyone involved, including myself, has a very demanding "real" day job. Balancing work AND
+                        booking venues and coordinating 50+ musicians is a recipe for burnout. Managing the group has
+                        become incredibly challenging. We needed a way to run and grow the community without relying on
+                        a full-time staff we simply don't have.</p>
+
+                    <p>So, I decided to treat our operational bottlenecks like an engineering problem. My goal?
+                        Transition us from a founder-run community to an LLM-run community. Here is how I set up
+                        OpenClaw to completely automate our day-to-day operations.</p>
+
+                    <div class="section-white">
+                        <h5>The Setup</h5>
+
+                        <p>I needed a system that could act actively and proactively, not just wait for a prompt. I
+                            settled
+                            on OpenClaw, running the core gateway on a Mac Mini in my apartment.</p>
+
+                        <p>For the brain, we use the Llama cloud 300B model as our primary engine. I also had an M4 Max
+                            MacBook (36GB) lying around, so I set that up to run a local 32B model as a secondary
+                            fallback.
+                            Honestly, Ollama cloud is a massive boon for projects like this. It costs me about $20 a
+                            month,
+                            and it provides models that come incredibly close to costly SOTA alternatives without
+                            burning
+                            through our non-profit budget.</p>
+
+                        <p>To make the agent genuinely useful, I gave it the keys to the kingdom. We connected our
+                            Google
+                            accounts (email, calendars, Drive), Partiful for RSVPs, and even Instagram via a browser
+                            automation tool. I also granted it direct browser access with our Google account signed in,
+                            setting strict instructions to ensure the bot takes initiative.</p>
+
+                        <h5>The Architecture: Beating Context Dilution</h5>
+
+                        <p>One of the best architectural decisions we made early on was how we structured the agents. We
+                            built a strict Supervisor-Worker pattern. Here is why: if you feed a smaller 32B local model
+                            a
+                            massive system prompt containing 15 different tool descriptions plus 50 messages of chat
+                            history, it suffers from "context dilution." It forgets its primary instruction and starts
+                            hallucinating tool parameters.</p>
+
+                        <p>To fix this, we enforced a brutal separation of concerns. Our main conversational agent
+                            doesn't
+                            actually have any direct tool access. Instead, we built atomic, task-specific "subagents"
+                            around
+                            every single tool call. For example, if the main agent needs to search the web, it talks to
+                            the
+                            Google Subagent.</p>
+
+                        <p>Starting with smaller models was a blessing in disguise. The optimizations we started for
+                            local
+                            models helped us immensely in squeezing maximum utility out of the large models once we
+                            migrated!</p>
+                        <p>Crucially, these subagents don't care about the entire context or prior chat history. They
+                            are
+                            passed exactly what they need to know for that specific task, and nothing else. Keeping
+                            their
+                            responsibility atomic forces the model to have 100% attention on a single, deterministic
+                            task.
+                            This ensures the tool calls executed by our smaller, secondary models are crisp,
+                            predictable,
+                            and hallucination-free. Then, we just made these subagents available to the main agents
+                            connected to our chat channels. It helped us immensely in squeezing maximum utility out of
+                            smaller models.</p>
+
+                        <p>Here is a high-level look at how the data flows through our supervisor-worker pattern:</p>
+
+                        <div class="center-align">
+                            <img src="architecture.png" alt="OpenClaw Automation Architecture" class="responsive-img"
+                                style="border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <h5>A McKinsey Analyst in Our WhatsApp Group</h5>
+
+                    <p>The magic really happened when we connected OpenClaw to WhatsApp. Because the agent has Google
+                        Drive access, our entire core team can now jam on strategy documents, grant ideas, and event
+                        plans directly through chat.</p>
+
+                    <blockquote>
+                        It is literally like having a McKinsey Associate sitting in our WhatsApp group with us
+                        live—searching the internet, synthesizing data, and editing our Google Docs on the fly while we
+                        just text it instructions.
+                    </blockquote>
+
+                    <p>We spun up specific agents to handle our biggest pain points:</p>
+                    <ul class="browser-default">
+                        <li><strong>Coding & Web Dev:</strong> Yes, it built our website.</li>
+                        <li><strong>Event Planning:</strong> Handling the logistics of our recurring jams.</li>
+                        <li><strong>Email Follow-ups:</strong> Auto-magically following up on open items with venues and
+                            partners.</li>
+                        <li><strong>Daily Check-ins:</strong> Pinging the team with reminders and status updates.</li>
+                    </ul>
+
+                    <p>The website deployment was particularly mind-blowing. We wanted to launch <a
+                            href="http://sfindianmusicproject.org" target="_blank">sfindianmusicproject.org</a>.
+                        Entirely through our inputs on WhatsApp, the agent registered the domain using our Google
+                        accounts, updated the DNS and A records, wrote the site's code, built and released the website
+                        on GitHub Pages, and finally went into GoDaddy to point the domain to our repo. It did all of
+                        this autonomously. Many cool things :)</p>
+
+                    <p>Beyond the active, command-driven tasks, we've also set up a suite of background cron jobs. The
+                        LLMs wake up periodically to sweep through our inboxes and summarize the daily influx of emails.
+                        Even better, they actively scan the web for new event opportunities and venue RFPs (Requests for
+                        Proposals), automatically flagging the best fits for our community. Having this autonomous
+                        intelligence running in the background is exactly what helps us keep things incredibly tight,
+                        ensuring no opportunity slips through the cracks while we are busy at our day jobs.</p>
+
+                    <div class="center-align" style="margin: 30px 0;">
+                        <img src="screenshot.jpg" alt="WhatsApp Cron Job Example" class="responsive-img z-depth-1" style="border-radius: 8px; max-height: 500px;">
+                    </div>
+
+                    <p>Getting quality results on this agent was an iterative process. Buring tokens with Claude ->
+                        Exploring free / low cost alternatives (We burned quotas with all major LLM providers) -> Local
+                        LLMs (which were just bad for agentic workflows) -> Ollama cloud</p>
+
+                    <p>Ollama cloud was our sweet spot. It gives us the heavy reasoning we need while keeping costs
+                        entirely predictable. I do however still route agents that need to be really smart to Claude's
+                        SOTA models (e.g. Once in a month deep analysis cron jobs)</p>
+
+                    <div class="section-white">
+                        <h5>My Little Secret (Sorry, Team!)</h5>
+
+                        <p>Okay, I have a confession to make—one that is completely unknown to my core team (lol).</p>
+
+                        <p>I set up a super-user agent connected directly to my personal WhatsApp DM channel. I routed
+                            all
+                            the incoming messages I get on WhatsApp regarding SFIMP straight to this agent. It analyzed
+                            my
+                            chat history, learned exactly how I talk, and has been responding by itself. It has
+                            literally
+                            replaced me in a few conversations with the SFIMP core team, and nobody has noticed yet.
+                            It’s
+                            the ultimate life-hack for a busy volunteer.</p>
+
+                        <h5>Controls & Security</h5>
+
+                        <p>Giving an autonomous AI access to your Google Drive, email inbox, and social media accounts
+                            is
+                            slightly terrifying if you don't implement the right guardrails. Security and control are
+                            absolutely paramount here.</p>
+
+                        <p>We strictly sandbox the environments OpenClaw operates in. For any high-stakes or
+                            irreversible
+                            actions—like officially submitting a grant, responding to a sensitive venue partnership, or
+                            modifying production DNS records—we enforce a strict "human-in-the-loop" approval flow. For
+                            the
+                            agent connected to our core team WhatsApp group, I've programmed explicit instructions: the
+                            team
+                            can always request things, but if the agent detects a risky operation (like password
+                            changes,
+                            modifying infrastructure, or sending critical external emails), it pauses. It is instructed
+                            to
+                            immediately send me a direct message (DM) on WhatsApp detailing the requested action. It
+                            won't
+                            execute until I personally review it and hit 'Approve' over DM.</p>
+
+                        <p>Additionally, I've set hard token and budget limits on the Ollama cloud API. The last thing
+                            we
+                            want is a runaway background loop hallucinating and draining our non-profit bank account
+                            overnight. It’s all about finding the sweet spot between full automation and responsible
+                            oversight.</p>
+
+                        <p>Another thing that was rather scary - OpenClaw and community skills on their marketplace had
+                            numerous security issues poping up. With my core team sharing their ideas, I locked out new
+                            skills installation, and added a rather large list of 'What not to do' prompts. </p>
+
+                        <h5>Lessons Learnt: The Cost of Autonomy</h5>
+
+                        <p>As amazing as this setup is, the learning curve had some sharp edges:</p>
+                        <ul class="browser-default">
+                            <li><strong>OpenClaw Eats Tokens:</strong> The context window hits its 12k limit fast. The
+                                startup cost for initializing new sessions with full context is noticeably high. My
+                                early
+                                optimism that a local 8B agent would do it all was a bad idea.</li>
+                            <li><strong>Computer Use is Expensive:</strong> We initially started building all of this
+                                using
+                                Claude. Claude is practically instantaneous, and giving an agent a mouse and a browser
+                                is
+                                undeniably powerful, but paying per token for that level of computer use is insanely
+                                costly.
+                                I spent $100 in just 2 hours experimenting with Claude-based browser-use agents (though
+                                it
+                                did successfully navigate the web to create our <a
+                                    href="https://www.eventbrite.com/e/sf-indian-music-project-spark-social-sf-tickets-1984681375420"
+                                    target="_blank">Eventbrite event for Spark Social</a> from scratch, fetching details
+                                from our original partiful link). That massive bill was the immediate catalyst that
+                                motivated me to move to local LLMs via Ollama. Speed-wise, the local models were okay—my
+                                local 8B model was pushing out about 80 tokens per second on my M4 Max 36GB RAM machine.
+                                But
+                                the 32B models just weren't "smart" enough for our complex reasoning tasks. They were
+                                hallucinating and constantly forgetting things in longer contexts. That is what
+                                ultimately
+                                pushed us to our current sweet spot: moving to a $20 per month fixed-cost 600B model on
+                                Ollama Cloud. It gives us the heavy reasoning we need while keeping costs entirely
+                                predictable.</li>
+                            <li><strong>Cloud over Local (for now):</strong> As much as I love my local M4 Max setup,
+                                Ollama
+                                cloud is just too good of a deal right now for the heavy reasoning tasks. Local models
+                                (under 100B params) are good enough to chat with, get ideas, create documents out of
+                                chat
+                                context. We tried hard to be smart, trying different models and architectures, but for
+                                LLMs,
+                                size and more parameters is the key.</li>
+                        </ul>
+                    </div>
+
+                    <h5>What’s Next for the SFIMP Agents?</h5>
+
+                    <p>We are just scratching the surface. Here is what is on the immediate roadmap as we scale our
+                        community orchestration:</p>
+
+                    <ul class="browser-default">
+                        <li><strong>Chat-Based Event Signups:</strong> We are actively creating agents to manage RSVPs.
+                            Why force our community to download new apps or click through web forms when we can handle
+                            signups conversationally via WhatsApp?</li>
+                        <li><strong>Community Access:</strong> Opening up the bot to the entire community, rather than
+                            keeping it locked to just the core team.</li>
+                        <li><strong>Growth Agents:</strong> Deploying agents specifically designed to follow up with
+                            venues, scout for partnership opportunities, and create/refine non-profit grant
+                            applications.</li>
+                        <li><strong>Data Scraping App:</strong> I am planning to build a companion Android app that
+                            grabs data from apps on my phone that lack an official API or CLI (like monitoring specific
+                            notifications). This will pipe even more context into OpenClaw to enhance our automation.
+                        </li>
+                        <li><strong>Google Sheets as our DB Backend:</strong> Our flagship events are "community jams"
+                            where we build a massive setlist of singers and musicians from the community. We have to
+                            coordinate precise time slots and ensure every single song has the exact right musicians on
+                            deck. Historically, allowing people to sign up individually by accessing <a
+                                href="https://docs.google.com/spreadsheets/d/1k4K0GZVevtR5LLULmBZhD9g_nQ0WcB_C-jkaS3Baf0U/edit?gid=0#gid=0"
+                                target="_blank">our massive Google Sheet</a> has been an absolute nightmare. Going
+                            forward, we are using agents to strictly control this access. A musician will simply ping
+                            our agent on WhatsApp or Instagram, and the agent will figure out what time slot to assign
+                            them and what accompanying musicians they need. In this architecture, Google Sheets
+                            essentially becomes our backend database!</li>
+                    </ul>
+
+                    <h5>Scope for improvement?</h5>
+                    <p>
+                        I am writing this blog to get more ideas on what else we can automate.
+                        Are there other community or operational workflows we can try handing over to agents?
+                        Do you have any tips or tricks on what we can do better, or how to reduce LLM costs while
+                        getting even better outcomes?
+                        I'd love to hear from you!
+                    </p>
+
+                    <h5>About the SF Indian Music Project (SFIMP)</h5>
+                    <p>If you're wondering what all this automation is actually powering, the San Francisco Indian Music
+                        Project is our community initiative aimed at bringing high-quality, cross-genre Indian music to
+                        the Bay Area. We host recurring community jam sessions, open mics, studio recordings and
+                        flagship performances, creating an open platform for musicians of all levels to collaborate and
+                        perform.</p>
+
+                    <p>To stay in the loop about future events, frequent jams, and our community updates, be sure to
+                        check out our website at <a href="http://sfindianmusicproject.org"
+                            target="_blank">sfindianmusicproject.org</a>.</p>
+                    <p>PS: We have been actively editing the website. If its working, thats me being a great user of AI.
+                        If its broken, blame the AI :)</p>
+                    <p>Building the SF Indian Music Project has been one of the most rewarding experiences of my life.
+                        By leaning into autonomous agents and treating operations like an engineering problem, we are
+                        proving that a large, highly organized community can scale beautifully. It’s a great way to run
+                        a massive community with just a couple of hours of investment a week. You don't need a massive
+                        payroll; sometimes, you just need a smart agentic setup and a really good WhatsApp group.</p>
+                    <p><em>Yes, a large part of this blog was generated by AI based the system we setup and my
+                            conversations history with the agents.</em></p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize image zoom functionality
+            var materialboxes = document.querySelectorAll('.materialboxed');
+            M.Materialbox.init(materialboxes);
+
+            // Initialize mobile sidebar navigation
+            var sidenavs = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavs);
+        });
+    </script>
+</body>
+
+</html>
